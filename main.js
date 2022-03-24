@@ -1,4 +1,5 @@
 import "./style.css";
+import "./sass/style.scss";
 
 document.querySelector("#app").innerHTML = `
   <h1>Yo yo yo team what UP welcome to this muthaf*** let's get it get it</h1>
