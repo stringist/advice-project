@@ -11,8 +11,8 @@
     --color-secondary2: #7486aa;
     --color-accent1: #c44f67;
     --color-accent2: rgb(241, 143, 1);
-    --displayFont: "EB Garamond", sans-serif;
-    --bodyFont: "Lato", sans-serif;
+    --displayFont: "Open Sans", sans-serif;
+    --bodyFont: "Open Sans", sans-serif;
 }
 
 body {
