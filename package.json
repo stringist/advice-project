@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "isitfriday": "^1.0.3",
     "sass": "^1.49.9",
     "vite": "^2.8.0"
   }
