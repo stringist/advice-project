@@ -1,9 +1,11 @@
 import "./style.css";
+import "./sass/style.scss";
 
 document.querySelector("#app").innerHTML = `
   <h1>Yo yo yo team what UP welcome to this muthaf*** let's get it get it</h1>
   <h2> Yo yo yo, we are gonna nail it &#x1F60E<h2>
   <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
+<<<<<<< HEAD
 `;
 /* const userInput = "https://kea.dk/";
 
@@ -83,3 +85,6 @@ getPageSpeedData();
 getCarbonData();
 
 /* ------------------------------------------------------------------ */
+=======
+`;
+>>>>>>> 09cd6a940292b0f790d3d1d196b5863aa376a691
