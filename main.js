@@ -61,7 +61,7 @@ getCarbonData();
   </body>
 </html> */
 /* ------------------------------------------------------------------------------------------------------------------- */
-/* const key = "AIzaSyAenWpaU3tqIjJc1d2HtM0juCYilYx1gPs";
+const key = "AIzaSyAenWpaU3tqIjJc1d2HtM0juCYilYx1gPs";
 const url = encodeURIComponent("https://kea.dk");
 async function getPageSpeedData() {
   const result = await fetch(
@@ -70,37 +70,16 @@ async function getPageSpeedData() {
   const data = await result.json();
   console.log(data);
 }
+
 async function getCarbonData() {
-  const result = await fetch(`https://api.websitecarbon.com/site?url=${url}`);
+  const result = await fetch(
+    `https://kea-alt-del.dk/websitecarbon/?url=https://facebook.com`
+  );
   const data = await result.json();
   console.log(data);
+  console.log(data.loadingExperience);
 }
 getPageSpeedData();
 getCarbonData();
- */
 
 /* ------------------------------------------------------------------ */
-
-const url =
-  "https://api.websitecarbon.com/site?url=https%3A%2F%2Fwww.wholegraindigital.com%2F";
-
-fetch(url)
-  .then((response) => {
-    if (!response.ok) {
-      throw Error(response.statusText);
-    }
-    return response.json();
-  })
-
-  .then((data) => {
-    handleData(data);
-  })
-
-  .catch((e) => {
-    console.error("An error occured:", e.message);
-  });
-
-function handleData(data) {
-  console.log("im called");
-  console.log(data);
-}
