@@ -1,4 +1,3 @@
-import "./style.css";
 import "./sass/style.scss";
 
 document.querySelector("#app").innerHTML = `
@@ -66,25 +65,25 @@ getCarbonData();
 const key = "AIzaSyAenWpaU3tqIjJc1d2HtM0juCYilYx1gPs";
 const url = encodeURIComponent("https://kea.dk");
 async function getPageSpeedData() {
-  const result = await fetch(
-    `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}&key=${key}`
-  );
-  const data = await result.json();
-  console.log(data);
+    const result = await fetch(
+        `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}&key=${key}`
+    );
+    const data = await result.json();
+    console.log(data);
 }
 
 async function getCarbonData() {
-  const result = await fetch(
-    `https://kea-alt-del.dk/websitecarbon/?url=https://facebook.com`
-  );
-  const data = await result.json();
-  console.log(data);
-  console.log(data.loadingExperience);
+    const result = await fetch(
+        `https://kea-alt-del.dk/websitecarbon/?url=https://facebook.com`
+    );
+    const data = await result.json();
+    console.log(data);
+    console.log(data.loadingExperience);
 }
 getPageSpeedData();
 getCarbonData();
 
 /* ------------------------------------------------------------------ */
-=======
-`;
->>>>>>> 09cd6a940292b0f790d3d1d196b5863aa376a691
+
+// `;
+// >>>>>>> 09cd6a940292b0f790d3d1d196b5863aa376a691

@@ -1,2 +1,13 @@
-// import Open Sans
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap');
+@use './abstracts' as a;
+@use './components' as c;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: a.$font-stack;
+    color: a.$light;
+    background-color: a.$darkest;
+}
