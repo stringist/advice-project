@@ -1,14 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Advice Project</title>
-  </head>
 
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advice Project</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="app">
+    <h1>Impact Advisor</h1>
+
+    <form action="[URL]" method="GET">
+
+
+      <legend>Enter your URL and select your industry to create a report on the envirmontal impact of your page and
+        learn about steps for improvement.</legend>
+
+      <label for="url">URL</label>
+      <span id="url-hint">e.g: http://adviceas.dk</span>
+      <input id="url" name="url" type="text" inputmode="url" required>
+      <span class="error" id="err-url"><span class="material-icons-outlined">
+          error
+        </span>Insert a valid url</span>
+
+
+      <label for="industry">Industry</label>
+      <select id="industry" name="industry" required>
+        <optgroup label="Industry">
+          <option disabled selected value> -- Select an option -- </option>
+          <option value="agriculture">Agriculture and Food Production</option>
+          <option value="finance">Finance</option>
+          <option value="clothing">Clothing and Fashion</option>
+          <option value="tech">Tech and Data</option>
+          <option value="construction">Construction</option>
+          <option value="transpot">Transport</option>
+          <option value="entertainment">Culture, Sports, Entertainment</option>
+          <option value="hotel">Hotel and Restraurant</option>
+          <option value="energy">Energy</option>
+          <option value="grocery">Grocery Store</option>
+        </optgroup>
+      </select>
+      <span class="error" id="err-industry"><span class="material-icons-outlined">
+          error
+        </span>Select an industry</span>
+
+      <button>Generate Report</button>
+
+
+
+    </form>
+
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>

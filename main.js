@@ -1,12 +1,6 @@
 import "./style.css";
 import "./sass/style.scss";
 
-document.querySelector("#app").innerHTML = `
-  <h1>Yo yo yo team what UP welcome to this muthaf*** let's get it get it</h1>
-  <h2> Yo yo yo, we are gonna nail it &#x1F60E<h2>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-<<<<<<< HEAD
-`;
 /* const userInput = "https://kea.dk/";
 
 const url = `https://api.websitecarbon.com/site?url=${userInput}`;
@@ -66,17 +60,13 @@ getCarbonData();
 const key = "AIzaSyAenWpaU3tqIjJc1d2HtM0juCYilYx1gPs";
 const url = encodeURIComponent("https://kea.dk");
 async function getPageSpeedData() {
-  const result = await fetch(
-    `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}&key=${key}`
-  );
+  const result = await fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}&key=${key}`);
   const data = await result.json();
   console.log(data);
 }
 
 async function getCarbonData() {
-  const result = await fetch(
-    `https://kea-alt-del.dk/websitecarbon/?url=https://facebook.com`
-  );
+  const result = await fetch(`https://kea-alt-del.dk/websitecarbon/?url=https://facebook.com`);
   const data = await result.json();
   console.log(data);
   console.log(data.loadingExperience);
@@ -85,6 +75,3 @@ getPageSpeedData();
 getCarbonData();
 
 /* ------------------------------------------------------------------ */
-=======
-`;
->>>>>>> 09cd6a940292b0f790d3d1d196b5863aa376a691
