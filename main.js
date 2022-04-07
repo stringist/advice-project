@@ -1,4 +1,3 @@
-import "./style.css";
 import "./sass/style.scss";
 
 document.querySelector("#app").innerHTML = `
