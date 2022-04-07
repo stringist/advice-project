@@ -63,7 +63,7 @@ getCarbonData();
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 const key = "AIzaSyAenWpaU3tqIjJc1d2HtM0juCYilYx1gPs";
-const url = encodeURIComponent("https://kea.dk");
+const url = encodeURIComponent("https://politiken.dk/");
 async function getPageSpeedData() {
   const result = await fetch(
     `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}&key=${key}`
