@@ -9,13 +9,47 @@
 
   <body>
     <header>
-      <div class="gradient_container"></div>
+      <div id="gradient_container"></div>
+      <div id="starry_night"></div>
     </header>
-    <h1>Impact Advisor</h1>
-    <h3>
-      Enter your URL and select your industry to learn about the environmental
-      impact of your website.
-    </h3>
+    <div id="introduction_content">
+      <div id="text">
+        <h1>Impact Advisor</h1>
+        <p>
+          Enter your URL and select your industry to learn about the
+          environmental impact of your website.
+        </p>
+      </div>
+
+      <form>
+        <label for="url">URL</label>
+        <input
+          name="calculator"
+          id="url"
+          type="url"
+          placeholder="https://www.insertURLhere.com"
+          required
+        />
+        <label for="industry">Industry</label>
+        <select name="calculator" id="industry">
+          <option value="#">--Please choose an option--</option>
+          <option value="agriculture">Agriculture</option>
+          <option value="financiel">The Financiel sector</option>
+          <option value="fashion">The Clothing & Fashion industry</option>
+          <option value="tech">The Tech & Data industry</option>
+          <option value="construction">The Construction industry</option>
+          <option value="transport">The Transport industry</option>
+          <option value="entertainment">
+            Culture, sports and the entertainment industry
+          </option>
+          <option value="restaurent">The Hotel and Restaurent industry</option>
+          <option value="energy">The Energy sector</option>
+          <option value="groceries">Food & Groceries</option>
+        </select>
+        <button>Create report</button>
+      </form>
+    </div>
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>
