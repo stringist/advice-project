@@ -1,3 +1,4 @@
+import "./style.css";
 import "./sass/style.scss";
 
 document.querySelector("#app").innerHTML = `
@@ -63,7 +64,7 @@ getCarbonData();
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 const key = "AIzaSyAenWpaU3tqIjJc1d2HtM0juCYilYx1gPs";
-const url = encodeURIComponent("https://politiken.dk/");
+const url = encodeURIComponent("https://kea.dk");
 async function getPageSpeedData() {
   const result = await fetch(
     `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}&key=${key}`
