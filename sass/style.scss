@@ -11,3 +11,18 @@ body {
     color: a.$light;
     background-color: a.$darkest;
 }
+
+header {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(180deg, #000000 0%, #04001C 35.42%, #020A27 76.04%, #041117 100%);
+    overflow: hidden;
+    div {
+        margin-top: 45vh;
+        background: linear-gradient(180deg, rgba(29, 40, 46, 0) 54.68%, rgba(255, 105, 180, 0.12) 83.09%, rgba(255, 71, 137, 0.27) 100%);
+        height: 55vh;
+    }
+}
