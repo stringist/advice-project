@@ -150,7 +150,7 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #fff;
+    background-color: a.$light;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
     background-color: rgba(0, 0, 0, 0.1);
 }
@@ -176,7 +176,7 @@ main {
         }
         circle:nth-child(1) {
             stroke-dashoffset: 0;
-            stroke: #f3f3f3;
+            stroke: a.$light;
         }
         circle:nth-child(2) {
             stroke-dashoffset: calc(440 - (440 * 25) / 100);
