@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Advice Project</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <header>
-      <div id="gradient_container"></div>
-      <div id="starry_night"></div>
+        <div id="gradient_container"></div>
+        <div id="starry_night"></div>
     </header>
 
     <div id="introduction_content">
-      <div id="text">
-        <h1>Impact Advisor</h1>
-        <p>
-          Enter your URL and select your industry to learn about the
-          environmental impact of your website.
-        </p>
-      </div>
+        <div id="text">
+            <h1>Impact Advisor</h1>
+            <p>Enter your URL and select your industry to learn about the environmental impact of your website.</p>
+        </div>
 
-      <form>
-        <label for="url">URL</label>
-        <input
-          name="calculator"
-          id="url"
-          type="url"
-          placeholder="https://www.insertURLhere.com"
-          required
-        />
-        <label for="industry">Industry</label>
-        <select name="calculator" id="industry">
+        <form>
+            <label for="url">URL</label>
+            <input name="calculator" id="url" type="url" placeholder="https://www.insertURLhere.com" required />
+            <label for="industry">Industry</label>
+            <select name="calculator" id="industry">
           <option value="#">--Please choose an option--</option>
           <option value="agriculture">Agriculture</option>
           <option value="financiel">The Financiel sector</option>
@@ -40,114 +32,178 @@
           <option value="tech">The Tech & Data industry</option>
           <option value="construction">The Construction industry</option>
           <option value="transport">The Transport industry</option>
-          <option value="entertainment">
-            Culture, sports and the entertainment industry
-          </option>
+          <option value="entertainment">Culture, sports and the entertainment industry</option>
           <option value="restaurent">The Hotel and Restaurent industry</option>
           <option value="energy">The Energy sector</option>
           <option value="groceries">Food & Groceries</option>
         </select>
-        <button>Create report</button>
-      </form>
+            <button>Create report</button>
+        </form>
     </div>
     <main>
-      <div id="insights">
-        <div id="results">
-          <h2>Insights</h2>
-          <div id="performance">
-            <div class="box">
-              <div class="percent">
-                <svg>
+        <div id="insights">
+            <div id="results">
+                <h2>Insights</h2>
+                <div id="performance">
+                    <div class="box">
+                        <div class="percent">
+                            <svg>
                   <circle cx="70" cy="70" r="70"></circle>
                   <circle cx="70" cy="70" r="70"></circle>
                 </svg>
-                <div class="number">
-                  <h2>87</h2>
-                  <span>%</span>
+                            <div class="number">
+                                <h2>87</h2>
+                                <span>%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Performance</p>
                 </div>
-              </div>
-            </div>
-            <p>Performance</p>
-          </div>
-          <div id="energy">
-            <div class="box">
-              <div class="percent">
-                <svg>
+                <div id="energy">
+                    <div class="box">
+                        <div class="percent">
+                            <svg>
                   <circle cx="70" cy="70" r="70"></circle>
                   <circle cx="70" cy="70" r="70"></circle>
                 </svg>
-                <div class="number">
-                  <h2>87</h2>
-                  <span>%</span>
+                            <div class="number">
+                                <h2>87</h2>
+                                <span>%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Energy in Kwg</p>
                 </div>
-              </div>
-            </div>
-            <p>Energy in Kwg</p>
-          </div>
-          <div id="co2">
-            <div class="box">
-              <div class="percent">
-                <svg>
+                <div id="co2">
+                    <div class="box">
+                        <div class="percent">
+                            <svg>
                   <circle cx="70" cy="70" r="70"></circle>
                   <circle cx="70" cy="70" r="70"></circle>
                 </svg>
-                <div class="number">
-                  <h2>87</h2>
-                  <span>%</span>
+                            <div class="number">
+                                <h2>87</h2>
+                                <span>%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Co2</p>
                 </div>
-              </div>
-            </div>
-            <p>Co2</p>
-          </div>
-          <div id="bytes">
-            <div class="box">
-              <div class="percent">
-                <svg>
+                <div id="bytes">
+                    <div class="box">
+                        <div class="percent">
+                            <svg>
                   <circle cx="70" cy="70" r="70"></circle>
                   <circle cx="70" cy="70" r="70"></circle>
                 </svg>
-                <div class="number">
-                  <h2>87</h2>
-                  <span>%</span>
+                            <div class="number">
+                                <h2>87</h2>
+                                <span>%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Bytes</p>
                 </div>
-              </div>
-            </div>
-            <p>Bytes</p>
-          </div>
-          <div id="host">
-            <div class="box">
-              <div class="percent">
-                <svg>
+                <div id="host">
+                    <div class="box">
+                        <div class="percent">
+                            <svg>
                   <circle cx="70" cy="70" r="70"></circle>
                   <circle cx="70" cy="70" r="70"></circle>
                 </svg>
-                <div class="number">
-                  <h2>87</h2>
-                  <span>%</span>
+                            <div class="number">
+                                <h2>87</h2>
+                                <span>%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Green host</p>
                 </div>
-              </div>
-            </div>
-            <p>Green host</p>
-          </div>
-          <div id="http">
-            <div class="box">
-              <div class="percent">
-                <svg>
+                <div id="http">
+                    <div class="box">
+                        <div class="percent">
+                            <svg>
                   <circle cx="70" cy="70" r="70"></circle>
                   <circle cx="70" cy="70" r="70"></circle>
                 </svg>
-                <div class="number">
-                  <h2>87</h2>
-                  <span>%</span>
-                </div>
-              </div>
-            </div>
+                            <div class="number">
+                                <h2>87</h2>
+                                <span>%</span>
+                            </div>
+                        </div>
+                    </div>
 
-            <p>HTTP requests</p>
-          </div>
+                    <p>HTTP requests</p>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <section>
+            <h2>Opportunities</h2>
+            <article id="opportunities">
+                <form id="checklist">
+                    <div class="checklists_container">
+                        <div class="checklist">
+                            <h3>First steps</h3>
+                            <ul class="first_steps checklist">
+
+                                <li>
+                                    <div class="checkbox_label">
+                                        <input type="checkbox" id="reduce_img" name="reduce_img" />
+                                        <label for="reduce_img">Reduce images</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="checkbox_label">
+                                        <input type="checkbox" id="minify" name="minify" />
+                                        <label for="minify">Minify code</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="checkbox_label">
+                                        <input type="checkbox" id="caching" name="caching" />
+                                        <label for="caching">Enable caching</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="checkbox_label">
+                                        <input type="checkbox" id="fewer_fonts" name="fewer_fonts" />
+                                        <label for="fewer_fonts">Use fewer fonts</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="checklist">
+                            <h3>Taking it further</h3>
+                            <ul class="further checklist">
+
+                                <li>
+                                    <div class="checkbox_label">
+                                        <input type="checkbox" id="green_host" name="green_host" />
+                                        <label for="green_host">Switch to green host</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="checkbox_label">
+                                        <input type="checkbox" id="remove_vid_img" name="remove_vid_img" />
+                                        <label for="remove_vid_img">Remove video & images</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="checkbox_label">
+                                        <input type="checkbox" id="next_gen" name="next_gen" />
+                                        <label for="next_gen">Use next-gen formats for images</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button id="recalculate" class="full-width secondary">Recalculate results</button>
+                </form>
+            </article>
+        </section>
     </main>
     <script type="module" src="/main.js"></script>
-  </body>
+</body>
+
 </html>

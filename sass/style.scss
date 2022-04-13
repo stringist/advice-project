@@ -1,5 +1,7 @@
 @use "./abstracts" as a;
 @use "./components" as c;
+$radius: 3px;
+$test: solid 1px hotpink;
 * {
     box-sizing: border-box;
     margin: 0;
@@ -15,7 +17,7 @@ body {
 }
 
 header {
-    background: linear-gradient( 180deg, #000000 0%, #04001c 35.42%, #020a27 76.04%, #041117 100%);
+    background: linear-gradient(180deg, #000000 0%, #04001c 35.42%, #020a27 76.04%, #041117 100%);
     display: grid;
     overflow: hidden;
     grid-row: 1;
@@ -34,6 +36,22 @@ header {
         grid-row: 1;
         grid-column: 1/-1;
     }
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style: none;
+    font-size: 1.3rem;
+    font-weight: 200;
 }
 
 #introduction_content {
@@ -73,7 +91,7 @@ form {
     color: a.$light;
     padding-left: 0.8rem;
     height: 2.5rem;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
 }
 
 #url {
@@ -100,7 +118,7 @@ form>button {
     border-radius: 3px;
     color: a.$darkest;
     font-weight: 600;
-    font-size: .9rem;
+    font-size: 0.9rem;
     cursor: pointer;
 }
 
@@ -238,4 +256,44 @@ main {
     #results {
         grid-template-columns: repeat(auto-fit, minmax(55vw, 1fr));
     }
+}
+
+// opportunities styling
+#opportunities {
+    border: solid 1px a.$accent;
+    border-radius: $radius;
+    form {
+        padding: 4rem 2rem 4rem 2rem;
+        background: linear-gradient(180deg, #0a1724 0%, rgba(10, 23, 36, 0) 100%);
+        .checklists_container {
+            display: flex;
+            justify-content: space-around;
+            columns: 2;
+            // width: 50%;
+            h3 {
+                margin-bottom: 0.5rem;
+            }
+            .checklist ul {
+                margin-top: 1rem;
+                padding-left: 1rem;
+                display: flex;
+                gap: 1rem;
+                flex-direction: column;
+                li {
+                    max-width: 23ch;
+                }
+            }
+        }
+        .checkbox_label {
+            // border: $test;
+        }
+        button {
+            margin: 4rem auto 2rem auto;
+            padding: .5rem;
+            min-width: 80%;
+        }
+    }
+    // border: 1px solid;
+    // border-image-source: linear-gradient(180deg, rgba(34, 195, 232, 0) 0%, #22C3E8 100%);
+    // background-image: ;
 }
