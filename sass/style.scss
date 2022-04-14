@@ -28,7 +28,18 @@ header {
   overflow: hidden;
   grid-row: 1;
   grid-column: 1/-1;
-
+  #gradient_container {
+    margin-top: 45vh;
+    background: linear-gradient(
+      180deg,
+      rgba(29, 40, 46, 0) 54.68%,
+      rgba(255, 105, 180, 0.12) 83.09%,
+      rgba(255, 71, 137, 0.27) 100%
+    );
+    height: 55vh;
+    grid-row: 1;
+    grid-column: 1/-1;
+  }
   #starry_night {
     background-image: url(../assets/starry_sky.svg);
     background-repeat: no-repeat, repeat;
@@ -155,6 +166,51 @@ form > button {
 
 main {
   padding: 50px 170px;
+  display: grid;
+  grid-template-columns: 1fr;
+  > h2,
+  #comparison_container {
+    text-align: center;
+  }
+  > h2 {
+    font-size: 48px;
+  }
+  #comparison_container {
+    padding: 5rem;
+    margin: 2rem 8rem 0 8rem;
+    background: linear-gradient(180deg, #10293f 0%, rgba(19, 24, 29, 0) 100%);
+    border: 1px solid;
+
+    border-image-source: linear-gradient(
+      180deg,
+      rgba(34, 195, 232, 0) 0%,
+      #22c3e8 100%
+    );
+
+    p:first-child {
+      font-size: 24px;
+    }
+    p {
+      font-size: 32px;
+    }
+    p:nth-child(2) {
+      span:first-child {
+        font-size: 96px;
+      }
+      span:last-child {
+        color: a.$accent;
+      }
+    }
+    p:nth-child(3) {
+      span {
+        font-size: 64px;
+      }
+    }
+  }
+  figure {
+    justify-self: center;
+    margin-top: 3rem;
+  }
 }
 
 /* ------------------------- Pie charts-------------------------- */
@@ -226,7 +282,7 @@ main {
   font-weight: 700;
   letter-spacing: 1px;
 }
-
+// Media queries
 @media (max-width: 1088px) {
   #results {
     grid-template-columns: repeat(auto-fit, minmax(25vw, 1fr));

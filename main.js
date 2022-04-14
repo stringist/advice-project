@@ -35,3 +35,22 @@ function pieChartPercentage(number) {
 
   return numberInPercentage;
 }
+
+// -----------------Animation ------------------------
+const properties = {
+  duration: 1000,
+  iterations: Infinity,
+  direction: "alternate",
+  easing: "ease-in-out",
+};
+const keyframes = [
+  {
+    transform: "translate(0,3vw)",
+  },
+  {
+    transform: "translate(0,0)",
+  },
+];
+
+const arrow = document.querySelector("#arrow");
+const animation = arrow.animate(keyframes, properties);
