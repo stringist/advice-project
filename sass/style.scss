@@ -60,6 +60,7 @@ header {
 }
 
 h2 {
+    margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
@@ -224,8 +225,9 @@ form>button {
 }
 
 figure {
-    justify-self: center;
-    margin-top: 3rem;
+    display: grid;
+    text-align: center;
+    place-items: center;
 }
 
 // Share your results or test new site
