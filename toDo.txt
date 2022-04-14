@@ -3,9 +3,9 @@ TO DO:
 Kalle: 
 
     finish styling opportunties section
-    --custom checkboxes
-    --responsive
-    --secondary button mixin
+    --custom checkboxes DONE
+    --responsive 
+    --secondary button mixin DONE
     --slider
 
     set global font size etc.
