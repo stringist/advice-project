@@ -10,4 +10,4 @@ Kalle:
 
     set global font size etc.
 
-    share & new test section
+    change share url input to copy paste thing
