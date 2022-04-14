@@ -1,0 +1,13 @@
+TO DO:
+
+Kalle: 
+
+    finish styling opportunties section
+    --custom checkboxes
+    --responsive
+    --secondary button mixin
+    --slider
+
+    set global font size etc.
+
+    share & new test section

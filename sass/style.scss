@@ -1,5 +1,7 @@
 @use "./abstracts" as a;
 @use "./components" as c;
+$radius: 3px;
+$test: solid 1px hotpink;
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,18 +28,7 @@ header {
   overflow: hidden;
   grid-row: 1;
   grid-column: 1/-1;
-  #gradient_container {
-    margin-top: 45vh;
-    background: linear-gradient(
-      180deg,
-      rgba(29, 40, 46, 0) 54.68%,
-      rgba(255, 105, 180, 0.242) 83.09%,
-      rgba(255, 71, 138, 0.346) 100%
-    );
-    height: 55vh;
-    grid-row: 1;
-    grid-column: 1/-1;
-  }
+
   #starry_night {
     background-image: url(../assets/starry_sky.svg);
     background-repeat: no-repeat, repeat;
@@ -45,6 +36,22 @@ header {
     grid-row: 1;
     grid-column: 1/-1;
   }
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style: none;
+  font-size: 1.3rem;
+  font-weight: 200;
 }
 
 #introduction_content {
@@ -79,14 +86,12 @@ form {
 
 #url,
 #industry {
-  background: linear-gradient(180deg, rgba(10, 31, 59, 0) 0%, #0a1f3b 100%);
+  background-color: #0a1f3b;
   border: none;
   color: a.$light;
   padding-left: 0.8rem;
   height: 2.5rem;
   margin-top: 0.5rem;
-  box-shadow: 1px 4px 6px rgba(34, 195, 232, 0.251);
-  color: rgb(34, 195, 232);
 }
 
 #url {
@@ -217,7 +222,7 @@ main {
 
 .text {
   padding: 10px 0 0;
-  color: #999;
+  color: a.$light-grey;
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -250,4 +255,44 @@ main {
   #results {
     grid-template-columns: repeat(auto-fit, minmax(55vw, 1fr));
   }
+}
+
+// opportunities styling
+#opportunities {
+  border: solid 1px a.$accent;
+  border-radius: $radius;
+  form {
+    padding: 4rem 2rem 4rem 2rem;
+    background: linear-gradient(180deg, #0a1724 0%, rgba(10, 23, 36, 0) 100%);
+    .checklists_container {
+      display: flex;
+      justify-content: space-around;
+      columns: 2;
+      // width: 50%;
+      h3 {
+        margin-bottom: 0.5rem;
+      }
+      .checklist ul {
+        margin-top: 1rem;
+        padding-left: 1rem;
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        li {
+          max-width: 23ch;
+        }
+      }
+    }
+    .checkbox_label {
+      // border: $test;
+    }
+    button {
+      margin: 4rem auto 2rem auto;
+      padding: 0.5rem;
+      min-width: 80%;
+    }
+  }
+  // border: 1px solid;
+  // border-image-source: linear-gradient(180deg, rgba(34, 195, 232, 0) 0%, #22C3E8 100%);
+  // background-image: ;
 }
