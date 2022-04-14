@@ -47,14 +47,16 @@
     </div>
 
     <main>
-        <h2>Your results</h2>
-        <div id="comparison_container">
-            <p>Your website is cleaner than:</p>
-            <p><span>80%</span> of websites in your <span>industry</span></p>
-            <p><span>76%</span> of websites overall</p>
-        </div>
+        <section id="your_results">
+            <h2>Your results</h2>
+            <div id="comparison_container">
+                <p>Your website is cleaner than:</p>
+                <p><span class="percentage">80%</span> of websites in your <span>industry</span></p>
+                <p><span class="percentage">76%</span> of websites overall</p>
+            </div>
+        </section>
         <figure><img id="arrow" src="assets/down_arrow.svg" alt="#" /></figure>
-        <div id="insights">
+        <section id="insights">
             <div id="results">
                 <h2>Insights</h2>
                 <div id="performance">
@@ -70,7 +72,7 @@
                             </div>
                         </div>
                     </div>
-                    <p>Performance</p>
+                    <p class="insight_label">Performance</p>
                 </div>
                 <div id="energy">
                     <div class="box">
@@ -85,7 +87,7 @@
                             </div>
                         </div>
                     </div>
-                    <p>Energy in Kwg</p>
+                    <p class="insight_label">Energy in Kwg</p>
                 </div>
                 <div id="co2">
                     <div class="box">
@@ -100,7 +102,7 @@
                             </div>
                         </div>
                     </div>
-                    <p>Co2</p>
+                    <p class="insight_label">Co2</p>
                 </div>
                 <div id="bytes">
                     <div class="box">
@@ -115,7 +117,7 @@
                             </div>
                         </div>
                     </div>
-                    <p>Bytes</p>
+                    <p class="insight_label">Bytes</p>
                 </div>
                 <div id="host">
                     <div class="box">
@@ -130,7 +132,7 @@
                             </div>
                         </div>
                     </div>
-                    <p>Green host</p>
+                    <p class="insight_label">Green host</p>
                 </div>
                 <div id="http">
                     <div class="box">
@@ -146,10 +148,10 @@
                         </div>
                     </div>
 
-                    <p>HTTP requests</p>
+                    <p class="insight_label">HTTP requests</p>
                 </div>
             </div>
-        </div>
+        </section>
         <section>
             <h2>Opportunities</h2>
             <article id="opportunities">
@@ -214,7 +216,7 @@
                 </form>
             </article>
         </section>
-        <div id="share_or_testnew">
+        <section id="share_or_testnew">
             <div id="share">
                 <label for="share_url">Share your results</label>
                 <input name="share_url" id="share_url" type="share_url" placeholder="unique-url.com/thisresult" required />
@@ -225,7 +227,7 @@
                 <input name="test_other" id="test_other" type="test_other" placeholder="https://" required />
                 <button>Run tests</button>
             </div>
-        </div>
+        </section>
         <figure>
             <a href="#backtothetop">
                 <div>

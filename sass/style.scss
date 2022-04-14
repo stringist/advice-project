@@ -10,6 +10,7 @@
 
 $radius: 3px;
 $test: solid 1px hotpink;
+$transborder: #22C3E8;
 * {
     box-sizing: border-box;
     margin: 0;
@@ -60,6 +61,10 @@ ul {
     list-style: none;
     font-size: 1.3rem;
     font-weight: 200;
+}
+
+section {
+    margin-bottom: 10vw;
 }
 
 #introduction_content {
@@ -139,16 +144,20 @@ form>button {
 
 #results {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(22vw, 1fr));
-    grid-gap: 30px 0px;
+    grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+    grid-gap: 2rem;
+    grid-row-gap: 3rem;
     h2 {
         grid-column: 1/-1;
         justify-self: left;
     }
+    .insight_label {
+        margin-top: 1.5rem;
+    }
     >div {
         border: 1px solid a.$accent;
         border-radius: 10px;
-        padding: 4vw;
+        padding: 4vw 6vw 4vw 6vw;
         display: flex;
         flex-direction: column;
         justify-self: center;
@@ -165,28 +174,40 @@ main {
     padding: 50px 170px;
     display: grid;
     grid-template-columns: 1fr;
-    >h2,
-    #comparison_container {
-        text-align: center;
-    }
-    >h2 {
+}
+
+#your_results {
+    text-align: center;
+    h2 {
         font-size: 48px;
     }
     #comparison_container {
-        padding: 5rem;
-        margin: 2rem 8rem 0 8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 3rem 0rem 5rem 0rem;
+        margin: 4rem 8rem 0 8rem;
         background: linear-gradient(180deg, #10293f 0%, rgba(19, 24, 29, 0) 100%);
-        border: 1px solid;
-        border-image-source: linear-gradient( 180deg, rgba(34, 195, 232, 0) 0%, #22c3e8 100%);
+        border: .5px solid $transborder;
+        border-radius: $radius;
+        // border-image-source: linear-gradient( 180deg, rgba(34, 195, 232, 0) 0%, #22c3e8 100%);
+        .percentage {
+            margin-right: 1rem;
+        }
         p:first-child {
             font-size: 24px;
         }
         p {
             font-size: 32px;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            align-items: center;
         }
         p:nth-child(2) {
             span:first-child {
                 font-size: 96px;
+                font-weight: 700;
             }
             span:last-child {
                 color: a.$accent;
@@ -198,13 +219,14 @@ main {
             }
         }
     }
-    figure {
-        justify-self: center;
-        margin-top: 3rem;
-    }
-    // Share your results or test new site
 }
 
+figure {
+    justify-self: center;
+    margin-top: 3rem;
+}
+
+// Share your results or test new site
 #share_or_testnew {
     justify-self: center;
     margin-top: 4rem;
@@ -403,12 +425,13 @@ figure:last-of-type {
                 margin-bottom: 0.5rem;
             }
             .checklist ul {
-                margin-top: 2rem;
+                margin-top: 1.2rem;
                 padding-left: 1rem;
                 display: flex;
                 gap: 1.8rem;
                 flex-direction: column;
                 li {
+                    // padding-top: .5rem;
                     max-width: 23ch;
                 }
             }
@@ -423,8 +446,8 @@ figure:last-of-type {
                 appearance: none;
                 margin: 0;
                 background-color: unset;
-                min-width: 35px;
-                height: 35px;
+                min-width: 30px;
+                height: 30px;
                 left: 20px;
                 top: 20px;
                 border: 2px solid #F0F1F2;
@@ -433,8 +456,8 @@ figure:last-of-type {
                 place-content: center;
                 &::before {
                     content: "";
-                    width: 20px;
-                    height: 20px;
+                    width: 18px;
+                    height: 18px;
                     left: 7px;
                     top: 7px;
                     background: #22C3E8;
