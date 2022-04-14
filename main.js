@@ -54,3 +54,21 @@ const keyframes = [
 
 const arrow = document.querySelector("#arrow");
 const animation = arrow.animate(keyframes, properties);
+
+const properties2 = {
+  duration: 750,
+  iterations: Infinity,
+  direction: "alternate",
+  easing: "ease-in-out",
+};
+const keyframes2 = [
+  {
+    transform: "translate(0,0.5vw)",
+  },
+  {
+    transform: "translate(0,-0.5vw)",
+  },
+];
+
+const backToTheTop = document.querySelector("#backArrow");
+const animation2 = backToTheTop.animate(keyframes2, properties2);

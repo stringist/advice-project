@@ -211,8 +211,106 @@ main {
     justify-self: center;
     margin-top: 3rem;
   }
+
+  // Share your results or test new site
+}
+#share_or_testnew {
+  justify-self: center;
+  margin-top: 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  label {
+    font-size: 28px;
+    margin-right: 1.5rem;
+  }
+  input {
+    padding: 0.8rem 10rem;
+    text-align: left;
+    margin-right: 1.5rem;
+  }
+  button {
+    padding: 0.8rem 2rem;
+  }
 }
 
+#share {
+  input {
+    background: linear-gradient(
+      180deg,
+      rgba(10, 36, 59, 0) 0%,
+      rgba(10, 31, 59, 0.5) 0.01%,
+      rgba(8, 57, 100, 0.75) 100%
+    );
+    border: 1px solid;
+
+    border-image-source: linear-gradient(
+      180deg,
+      rgba(34, 195, 232, 0) 0%,
+      #22c3e8 100%
+    );
+    color: a.$light;
+  }
+  button {
+    cursor: pointer;
+    background-color: #22c3e8;
+    border: 1px solid #22c3e8;
+    border-radius: 2px;
+  }
+}
+#testnew {
+  margin-top: 2rem;
+
+  input {
+    background: linear-gradient(
+      180deg,
+      rgba(10, 36, 59, 0) 0%,
+      rgba(10, 31, 59, 0.5) 0.01%,
+      rgba(8, 57, 100, 0.75) 100%
+    );
+    border: 1px solid;
+
+    border-image-source: linear-gradient(
+      180deg,
+      rgba(34, 195, 232, 0) 0%,
+      #22c3e8 100%
+    );
+    color: a.$light;
+  }
+
+  button {
+    cursor: pointer;
+    color: #22c3e8;
+    border: 1px solid #22c3e8;
+    border-radius: 2px;
+    background-color: a.$darkest;
+  }
+}
+#testnew,
+#share {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr;
+}
+
+figure:last-of-type {
+  margin: 6rem 0;
+  cursor: pointer;
+  div {
+    display: grid;
+    img {
+      grid-column: 1;
+      grid-row: 1;
+      align-self: center;
+      justify-self: center;
+    }
+  }
+}
+#backtothetop {
+  position: absolute;
+  top: 0;
+}
 /* ------------------------- Pie charts-------------------------- */
 
 .box {

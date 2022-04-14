@@ -9,6 +9,7 @@
 
   <body>
     <header>
+      <div id="backtothetop"></div>
       <div id="gradient_container"></div>
       <div id="starry_night"></div>
     </header>
@@ -155,6 +156,41 @@
           </div>
         </div>
       </div>
+      <div id="share_or_testnew">
+        <div id="share">
+          <label for="share_url">Share your results</label>
+          <input
+            name="share_url"
+            id="share_url"
+            type="share_url"
+            placeholder="unique-url.com/thisresult"
+            required
+          />
+          <button>Copy link</button>
+        </div>
+        <div id="testnew">
+          <label for="test_other">Test another site</label>
+          <input
+            name="test_other"
+            id="test_other"
+            type="test_other"
+            placeholder="https://"
+            required
+          />
+          <button>Run tests</button>
+        </div>
+      </div>
+      <figure>
+        <a href="#backtothetop">
+          <div>
+            <img src="assets/back_to_top_container.svg" alt="#" />
+            <img
+              id="backArrow"
+              src="assets/back_to_top_arrow.svg"
+              alt="#"
+            /></div
+        ></a>
+      </figure>
     </main>
     <script type="module" src="/main.js"></script>
   </body>
