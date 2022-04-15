@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <script type="module" src="Advice%20Project_files/client"></script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="http://localhost:3000/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advice Project</title>
+<style type="text/css">@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #F0F1F2;
+  background-color: #02090F;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+section {
+  margin-bottom: 10vw;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+header {
+  background: linear-gradient(180deg, #000000 0%, #04001c 35.42%, #020a27 76.04%, #041117 100%);
+  display: grid;
+  overflow: hidden;
+  grid-row: 1;
+  grid-column: 1/-1;
+}
+header #gradient_container {
+  margin-top: 45vh;
+  background: linear-gradient(180deg, rgba(29, 40, 46, 0) 54.68%, rgba(255, 105, 180, 0.12) 83.09%, rgba(255, 71, 137, 0.27) 100%);
+  height: 55vh;
+  grid-row: 1;
+  grid-column: 1/-1;
+}
+header #starry_night {
+  background-image: url(/assets/starry_sky.svg);
+  background-repeat: no-repeat, repeat;
+  background-size: contain;
+  grid-row: 1;
+  grid-column: 1/-1;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style: none;
+  font-size: 1.3rem;
+  font-weight: 200;
+}
+
+#introduction_content {
+  grid-row: 1;
+  grid-column: 1/-1;
+  padding: 0 48px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#text,
+#form {
+  max-width: 40rem;
+}
+
+#text h1 {
+  padding-bottom: 1rem;
+}
+
+#text p {
+  font-weight: 100;
+  max-width: 50ch;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+}
+
+#url,
+#industry {
+  background-color: #0a1f3b;
+  border: none;
+  color: #F0F1F2;
+  padding-left: 0.8rem;
+  height: 2.5rem;
+  margin-top: 0.5rem;
+}
+
+#url {
+  max-width: 21rem;
+  margin-bottom: 1.5rem;
+}
+
+#industry {
+  max-width: 15rem;
+  appearance: none;
+  background-image: url(/assets/arrow_down.svg);
+  background-repeat: no-repeat, repeat;
+  background-position: right 0.7em top 50%, 0 0;
+  background-size: 1.3em auto, 100%;
+  cursor: pointer;
+}
+
+form > button {
+  max-width: 13rem;
+  padding: 1.2rem;
+  margin-top: 3.5rem;
+  background-color: #22C3E8;
+  border: none;
+  border-radius: 3px;
+  color: #02090F;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+#insights h2 {
+  padding: 1rem 0;
+  font-size: 2rem;
+}
+
+#results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(23vw, 1fr));
+  grid-gap: 2rem;
+  grid-row-gap: 3rem;
+}
+#results h2 {
+  grid-column: 1/-1;
+  justify-self: left;
+}
+#results .insight_label {
+  margin-top: 1.5rem;
+}
+#results > div {
+  border: 1px solid #22C3E8;
+  border-radius: 10px;
+  padding: 4vw 6vw 4vw 6vw;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+}
+#results > div p {
+  padding-top: 0.8rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+#your_results {
+  text-align: center;
+}
+#your_results h2 {
+  font-size: 48px;
+}
+#your_results #comparison_container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem 0rem 5rem 0rem;
+  margin: 4rem 8rem 0 8rem;
+  background: linear-gradient(180deg, #10293f 0%, rgba(19, 24, 29, 0) 100%);
+  border: 0.5px solid #22c3e8;
+  border-radius: 3px;
+}
+#your_results #comparison_container .percentage {
+  margin-right: 1rem;
+}
+#your_results #comparison_container p:first-child {
+  font-size: 24px;
+}
+#your_results #comparison_container p {
+  font-size: 32px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+#your_results #comparison_container p:nth-child(2) span:first-child {
+  font-size: 96px;
+  font-weight: 700;
+}
+#your_results #comparison_container p:nth-child(2) span:last-child {
+  color: #22C3E8;
+}
+#your_results #comparison_container p:nth-child(3) span {
+  font-size: 64px;
+}
+
+figure {
+  justify-self: center;
+  margin-top: 3rem;
+}
+
+#share_or_testnew {
+  justify-self: center;
+  margin-top: 4rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#share_or_testnew label {
+  font-size: 28px;
+  margin-right: 1.5rem;
+}
+#share_or_testnew input {
+  padding: 1.2rem;
+  text-align: left;
+  margin-right: 1.5rem;
+}
+#share_or_testnew button {
+  padding: 0.8rem 2rem;
+}
+
+#share input {
+  background: linear-gradient(180deg, rgba(10, 36, 59, 0) 0%, rgba(10, 31, 59, 0.5) 0.01%, rgba(8, 57, 100, 0.75) 100%);
+  border: 1px solid;
+  border-image-source: linear-gradient(180deg, rgba(34, 195, 232, 0) 0%, #22c3e8 100%);
+  color: #F0F1F2;
+}
+#share button {
+  cursor: pointer;
+  background-color: #22c3e8;
+  border: 1px solid #22c3e8;
+  border-radius: 2px;
+}
+
+#testnew {
+  margin-top: 2rem;
+}
+#testnew input {
+  background: linear-gradient(180deg, rgba(10, 36, 59, 0) 0%, rgba(10, 31, 59, 0.5) 0.01%, rgba(8, 57, 100, 0.75) 100%);
+  border: 1px solid;
+  border-image-source: linear-gradient(180deg, rgba(34, 195, 232, 0) 0%, #22c3e8 100%);
+  color: #F0F1F2;
+}
+#testnew button {
+  cursor: pointer;
+  color: #22c3e8;
+  border: 1px solid #22c3e8;
+  border-radius: 2px;
+  background-color: #02090F;
+}
+
+#testnew,
+#share {
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: 2fr 3fr 1fr;
+}
+
+figure:last-of-type {
+  margin: 6rem 0;
+  cursor: pointer;
+}
+figure:last-of-type div {
+  display: grid;
+}
+figure:last-of-type div img {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  justify-self: center;
+}
+
+#backtothetop {
+  position: absolute;
+  top: 0;
+}
+
+/* ------------------------- Pie charts-------------------------- */
+.box {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #F0F1F2;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.percent {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+.percent svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform: rotate(270deg);
+}
+.percent svg circle {
+  width: 150px;
+  height: 150px;
+  fill: none;
+  stroke-width: 10;
+  stroke: #000;
+  transform: translate(5px, 5px);
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+}
+.percent svg circle:nth-child(1) {
+  stroke-dashoffset: 0;
+  stroke: #F0F1F2;
+}
+.percent svg circle:nth-child(2) {
+  stroke-dashoffset: 330;
+  stroke: #22C3E8;
+}
+
+.number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  columns: #999;
+}
+.number h2 {
+  font-size: 48px;
+}
+.number h2 span {
+  font-size: 24px;
+}
+
+.text {
+  padding: 10px 0 0;
+  color: #AAB7BF;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1088px) {
+  #results {
+    grid-template-columns: repeat(auto-fit, minmax(25vw, 1fr));
+  }
+}
+@media (max-width: 792px) {
+  #results {
+    grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr));
+  }
+}
+@media (max-width: 548px) {
+  #results {
+    grid-template-columns: repeat(auto-fit, minmax(35vw, 1fr));
+  }
+}
+@media (max-width: 386px) {
+  #results {
+    grid-template-columns: repeat(auto-fit, minmax(55vw, 1fr));
+  }
+}
+#opportunities {
+  border: solid 1px #22C3E8;
+  margin-left: 4vw;
+  margin-right: 4vw;
+  border-radius: 3px;
+}
+#opportunities form {
+  display: flex;
+  gap: 8vw;
+  padding: 4rem;
+  background: linear-gradient(180deg, #0a1724 0%, rgba(10, 23, 36, 0) 100%);
+}
+#opportunities form .checklists_container {
+  display: flex;
+  justify-content: space-between;
+}
+#opportunities form .checklists_container h3 {
+  margin-bottom: 0.5rem;
+}
+#opportunities form .checklists_container .checklist ul {
+  margin-top: 1.5rem;
+  padding-left: 1rem;
+  display: flex;
+  gap: 1.8rem;
+  flex-direction: column;
+}
+#opportunities form .checklists_container .checklist ul li {
+  max-width: 23ch;
+}
+#opportunities form .checkbox_label {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 1.3rem;
+  color: #F0F1F2;
+}
+#opportunities form .checkbox_label [type=checkbox] {
+  appearance: none;
+  margin: 0;
+  background-color: unset;
+  min-width: 30px;
+  height: 30px;
+  left: 20px;
+  top: 20px;
+  border: 2px solid #f0f1f2;
+  border-radius: 3px;
+  display: grid;
+  place-content: center;
+}
+#opportunities form .checkbox_label [type=checkbox]::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  left: 7px;
+  top: 7px;
+  background: #22c3e8;
+  border-radius: 3px;
+  transform: scale(0);
+  transition: 0.08s all ease-in-out;
+  box-shadow: inset 1em 1em #22C3E8;
+}
+#opportunities form .checkbox_label [type=checkbox]:checked::before {
+  transform: scale(1);
+}
+#opportunities form button {
+  background-color: unset;
+  border: solid 0.5px #22C3E8;
+  color: #22C3E8;
+  border-radius: 3px;
+  padding: 1.2rem;
+  margin: auto;
+  min-width: 80%;
+}
+@media screen and (max-width: 900px) {
+  #opportunities {
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+}
+@media screen and (max-width: 760px) {
+  #opportunities .checklists_container {
+    flex-direction: column;
+    gap: 4rem;
+    margin-left: 15vw;
+  }
+}</style></head>
+
+<body>
+    <header>
+        <div id="backtothetop"></div>
+        <div id="gradient_container"></div>
+        <div id="starry_night"></div>
+    </header>
+
+    <div id="introduction_content">
+        <div id="text">
+            <h1>Impact Advisor</h1>
+            <p>
+                Enter your URL and select your industry to learn about the environmental impact of your website.
+            </p>
+        </div>
+
+        <form>
+            <label for="url">URL</label>
+            <input name="calculator" id="url" type="url" placeholder="https://www.insertURLhere.com" required="">
+            <label for="industry">Industry</label>
+            <select name="calculator" id="industry">
+          <option value="#" selected="selected">--Please select--</option>
+          <option value="agriculture">Agriculture</option>
+          <option value="financial">The financial sector</option>
+          <option value="fashion">The clothing &amp; fashion industry</option>
+          <option value="tech">The Tech &amp; Data industry</option>
+          <option value="construction">The Construction industry</option>
+          <option value="transport">The Transport industry</option>
+          <option value="entertainment">
+            Culture, sports and the entertainment industry
+          </option>
+          <option value="restaurent">The Hotel and Restaurent industry</option>
+          <option value="energy">The Energy sector</option>
+          <option value="groceries">Food &amp; Groceries</option>
+        </select>
+            <button>Create report</button>
+        </form>
+    </div>
+
+    <main>
+        <section id="your_results">
+            <h2>Your results</h2>
+            <div id="comparison_container">
+                <p>Your website is cleaner than:</p>
+                <p><span class="percentage">80%</span> of websites in your <span>industry</span></p>
+                <p><span class="percentage">76%</span> of websites overall</p>
+            </div>
+        </section>
+        <figure><img id="arrow" src="Advice%20Project_files/down_arrow.svg" alt="#" style="margin-left: auto;"></figure>
+        <section id="insights">
+            <div id="results">
+                <h2>Insights</h2>
+                <div id="performance">
+                    <div class="box">
+                        <div class="percent">
+                            <svg>
+                  <circle cx="70" cy="70" r="70"></circle>
+                  <circle cx="70" cy="70" r="70" style="stroke-dashoffset: 158.4px;"></circle>
+                </svg>
+                            <div class="number">
+                                <h2>64</h2>
+                                <span>%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="insight_label">Performance</p>
+                </div>
+                <div id="energy">
+                    <div class="box">
+                        <div class="percent">
+                            <svg>
+                  <circle cx="70" cy="70" r="70"></circle>
+                  <circle cx="70" cy="70" r="70"></circle>
+                </svg>
+                            <div class="number">
+                                <h2>87</h2>
+                                <span>%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="insight_label">Energy in Kwg</p>
+                </div>
+                <div id="co2">
+                    <div class="box">
+                        <div class="percent">
+                            <svg>
+                  <circle cx="70" cy="70" r="70"></circle>
+                  <circle cx="70" cy="70" r="70"></circle>
+                </svg>
+                            <div class="number">
+                                <h2>87</h2>
+                                <span>%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="insight_label">Co2</p>
+                </div>
+                <div id="bytes">
+                    <div class="box">
+                        <div class="percent">
+                            <svg>
+                  <circle cx="70" cy="70" r="70"></circle>
+                  <circle cx="70" cy="70" r="70"></circle>
+                </svg>
+                            <div class="number">
+                                <h2>87</h2>
+                                <span>%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="insight_label">Bytes</p>
+                </div>
+                <div id="host">
+                    <div class="box">
+                        <div class="percent">
+                            <svg>
+                  <circle cx="70" cy="70" r="70"></circle>
+                  <circle cx="70" cy="70" r="70"></circle>
+                </svg>
+                            <div class="number">
+                                <h2>87</h2>
+                                <span>%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="insight_label">Green host</p>
+                </div>
+                <div id="http">
+                    <div class="box">
+                        <div class="percent">
+                            <svg>
+                  <circle cx="70" cy="70" r="70"></circle>
+                  <circle cx="70" cy="70" r="70"></circle>
+                </svg>
+                            <div class="number">
+                                <h2>87</h2>
+                                <span>%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="insight_label">HTTP requests</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Opportunities</h2>
+            <article id="opportunities">
+                <form id="checklist">
+                    <div class="checklists_container">
+                        <div class="checklist">
+                            <h3>First steps</h3>
+                            <ul class="first_steps checklist">
+
+                                <li>
+                                    <div class="checkbox_label">
+                                        <input type="checkbox" id="reduce_img" name="reduce_img">
+                                        <label for="reduce_img">Reduce images</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="checkbox_label">
+                                        <input type="checkbox" id="minify" name="minify">
+                                        <label for="minify">Minify code</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="checkbox_label">
+                                        <input type="checkbox" id="caching" name="caching">
+                                        <label for="caching">Enable caching</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="checkbox_label">
+                                        <input type="checkbox" id="fewer_fonts" name="fewer_fonts">
+                                        <label for="fewer_fonts">Use fewer fonts</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="checklist">
+                            <h3>Taking it further</h3>
+                            <ul class="further checklist">
+
+                                <li>
+                                    <div class="checkbox_label">
+                                        <input type="checkbox" id="green_host" name="green_host">
+                                        <label for="green_host">Switch to green host</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="checkbox_label">
+                                        <input type="checkbox" id="remove_vid_img" name="remove_vid_img">
+                                        <label for="remove_vid_img">Remove video &amp; images</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="checkbox_label">
+                                        <input type="checkbox" id="next_gen" name="next_gen">
+                                        <label for="next_gen">Use next-gen formats for images</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button id="recalculate" class="full-width secondary">Recalculate results</button>
+                </form>
+            </article>
+        </section>
+        <section id="share_or_testnew">
+            <div id="share">
+                <label for="share_url">Share your results</label>
+                <input name="share_url" id="share_url" type="share_url" placeholder="unique-url.com/thisresult" required="">
+                <button>Copy link</button>
+            </div>
+            <div id="testnew">
+                <label for="test_other">Test another site</label>
+                <input name="test_other" id="test_other" type="test_other" placeholder="https://" required="">
+                <button>Run tests</button>
+            </div>
+        </section>
+        <figure>
+            <a href="#backtothetop">
+                <div>
+                    <img src="Advice%20Project_files/back_to_top_container.svg" alt="#">
+                    <img id="backArrow" src="Advice%20Project_files/back_to_top_arrow.svg" alt="#"></div>
+            </a>
+        </figure>
+    </main>
+    <script type="module" src="Advice%20Project_files/main.js"></script>
+
+
+<aside style="position: fixed; top: 0px; right: 0px; font-family: &quot;Lucida Console&quot;, monospace; background-color: rgb(242, 230, 217); padding: 3px; z-index: 10000; text-align: center; max-width: 120px; opacity: 0; transition: opacity 0.5s linear 0s;">990 x 677</aside></body></html>
