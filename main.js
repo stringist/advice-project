@@ -7,7 +7,7 @@ async function getPageSpeedData() {
     `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}&key=${key}`
   );
   const data = await result.json();
-  console.log(data);
+  console.log(data.lighthouseResult.categories.performance.score);
 }
 async function getCarbonData() {
   const result = await fetch(`https://api.websitecarbon.com/site?url=${url}`);

@@ -11,3 +11,10 @@ Kalle:
     set global font size etc.
 
     change share url input to copy paste thing
+
+
+Lasse:
+
+-- Makes sections responsive
+
+
