@@ -4,7 +4,7 @@ Kalle:
 
     finish styling opportunties section
     --custom checkboxes DONE
-    --responsive SEMI DONE
+    --responsive SEMI
     --secondary button mixin DONE
     --slider
 
