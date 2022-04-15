@@ -10,7 +10,7 @@
 
 $radius: 3px;
 $test: solid 1px hotpink;
-$transborder: #22c3e8;
+$transborder: #22c4e885;
 * {
     box-sizing: border-box;
     margin: 0;
@@ -415,25 +415,25 @@ figure:last-of-type {
 
 // opportunities styling
 #opportunities {
-    border: solid 1px a.$accent;
+    border: solid .5px $transborder;
     margin-left: 4vw;
     margin-right: 4vw;
     border-radius: $radius;
     form {
         display: flex;
         gap: 8vw;
-        padding: 4rem;
+        padding: 6rem 0rem;
         background: linear-gradient(180deg, #0a1724 0%, rgba(10, 23, 36, 0) 100%);
         .checklists_container {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-evenly;
             // columns: 2;
             // width: 50%;
             h3 {
                 margin-bottom: 0.5rem;
             }
             .checklist ul {
-                margin-top: 1.5rem;
+                margin-top: 2rem;
                 padding-left: 1rem;
                 display: flex;
                 gap: 1.8rem;
@@ -500,4 +500,52 @@ figure:last-of-type {
     // border: 1px solid;
     // border-image-source: linear-gradient(180deg, rgba(34, 195, 232, 0) 0%, #22C3E8 100%);
     // background-image: ;
+}
+
+.slider_group {
+    margin-top: 1.2rem;
+}
+
+// slider styling
+input[type="range"] {
+    // margin-top: 1rem;
+    width: 80%;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: unset;
+    cursor: pointer;
+    &:focus {
+        outline: none;
+    }
+    &::-webkit-slider-runnable-track {
+        border: solid 1px a.$light;
+        border-radius: 10px;
+        background: unset;
+        height: 8px;
+    }
+    &::-moz-range-track {
+        border: solid 1px a.$light;
+        border-radius: 10px;
+        // background: unset;
+        height: 8px;
+    }
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 20px;
+        width: 28px;
+        background: #22C3E8;
+        margin-top: -5px;
+        border-radius: 10px;
+    }
+    &::-moz-range-thumb {
+        height: 20px;
+        width: 28px;
+        background: #22c4e8d3;
+        margin-top: -5px;
+        border-radius: $radius;
+    }
+    &:disabled {
+        filter: grayscale(1);
+        opacity: .2;
+    }
 }
