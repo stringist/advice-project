@@ -2,19 +2,30 @@ import "./sass/style.scss";
 
 const key = "AIzaSyAenWpaU3tqIjJc1d2HtM0juCYilYx1gPs";
 const url = encodeURIComponent("https://kea.dk");
+let performance;
+let greenHost;
+let energy;
+let co2Grams;
+let bytes;
+let cleanerThan;
 
 async function getPageSpeedData() {
   const result = await fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}&key=${key}`);
   const data = await result.json();
-  let performance = data.lighthouseResult.categories.performance.score;
+
   console.log(data.lighthouseResult.categories.performance.score);
-  return performance;
+
+  performance = data.lighthouseResult.categories.performance.score * 100;
+  perfomancePerc(performance);
 }
 
 async function getCarbonData() {
-  const result = await fetch(`https://api.websitecarbon.com/site?url=${url}`);
-  const data = await result.json();
-  console.log(data);
+  // const result = await fetch(`https://api.websitecarbon.com/site?url=${url}`);
+  const result = await fetch(`ecosia.json`);
+
+  const carbonData = await result.json();
+  console.log(carbonData);
+  console.log(carbonData.statistics.co2.grid.grams);
 }
 getPageSpeedData();
 getCarbonData();
@@ -28,8 +39,6 @@ function start() {
 }
 
 // ----------------- Pie charts ---------------------------
-
-perfomancePerc(99);
 
 function perfomancePerc(value) {
   const perfomanceChart = (document.querySelector(".percent svg circle:nth-child(2)").style.strokeDashoffset = pieChartPercentage(value));
