@@ -58,6 +58,7 @@
         <p>
           <span class="percentage">80%</span> of websites in your<span>&nbsp;industry</span>
         </p>
+        <p class="previous_score hidden">Your previous score was: <span> 75%</span></p>
         <p><span class="percentage">76%</span> of websites overall</p>
       </div>
     </section>
@@ -219,16 +220,16 @@
               </ul>
             </div>
           </div>
-          <button id="recalculate" class="full-width secondary">
-            Recalculate results
-          </button>
+          <a href="#your_results"> <button id="recalculate" class="full-width secondary" type="button">
+              Recalculate results
+            </button></a>
         </form>
       </article>
     </section>
     <section id="share_or_testnew">
       <div id="share">
         <label for="share_url">Share your results</label>
-        <input name="share_url" id="share_url" type="share_url" placeholder="unique-url.com/thisresult" required />
+        <output name="share_url" id="share_url" type="share_url" placeholder="unique-url.com/thisresult"></output>
         <button data-clipboard-text="">Copy link</button>
       </div>
       <div id="testnew">

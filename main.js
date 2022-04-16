@@ -13,21 +13,21 @@ let sharableURL = "https://yoursharableURL.com/id";
 new ClipboardJS("#share button");
 
 async function getPageSpeedData() {
-  const result = await fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}&key=${key}`);
+  // const result = await fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}&key=${key}`);
+  const result = await fetch(`ecosiaPS.json`);
+
   const data = await result.json();
 
   console.log(data.lighthouseResult.categories.performance.score);
 
   performance = data.lighthouseResult.categories.performance.score * 100;
   perfomancePerc(performance);
-
-  // this function needs more time to run, therefore changeData is called here for now. Make it be called after both are run?
-  changeData();
+  getCarbonData();
 }
 
 async function getCarbonData() {
   // const result = await fetch(`https://api.websitecarbon.com/site?url=${url}`);
-  const result = await fetch(`ecosia.json`);
+  const result = await fetch(`ecosiaCW.json`);
 
   const data2 = await result.json();
   console.log(data2);
@@ -36,9 +36,9 @@ async function getCarbonData() {
   cleanerThan = data2.cleanerThan * 100;
   energy = data2.statistics.energy;
   greenHost = data2.green;
+
+  changeData();
 }
-getPageSpeedData();
-getCarbonData();
 
 window.addEventListener("load", start);
 
@@ -46,6 +46,7 @@ function start() {
   // addEventListeners();
   rangeSlider();
   windmills();
+  getPageSpeedData();
 
   console.log("start");
 }
@@ -57,16 +58,21 @@ function changeData() {
   document.querySelector(".percentage").innerHTML = `${cleanerThan}%`;
   document.querySelector("#co2 h2").innerHTML = `${co2Grams.toFixed(2)}`;
   document.querySelector("#bytes h2").innerHTML = `${kB.toFixed(0)}`;
-  document.querySelector("#bytes h2").innerHTML = `${kB.toFixed(0)}`;
+
   if (greenHost === true) {
     document.querySelector("#host h2").innerHTML = `👍`;
+    document.querySelector(".further").firstElementChild.classList.add("hidden");
   } else if (greenHost === false) {
     document.querySelector("#host h2").innerHTML = `👎`;
+    document.querySelector(".further").firstElementChild.classList.remove("hidden");
   } else {
     document.querySelector("#host h2").innerHTML = `🤷`;
+    document.querySelector(".further").firstElementChild.classList.remove("hidden");
   }
+  document.querySelector("#share output").innerHTML = sharableURL;
   document.querySelector("#share button").setAttribute("data-clipboard-text", sharableURL);
-  console.log(sharableURL);
+
+  document.querySelector("#recalculate").addEventListener("click", recalculateResults);
 }
 
 // ----------------- Pie charts ---------------------------
@@ -80,6 +86,15 @@ function pieChartPercentage(number) {
   let numberInPercentage = 440 - (440 * number) / 100;
 
   return numberInPercentage;
+}
+
+// ----------------- Recalculate Results ---------------------------
+function recalculateResults() {
+  console.log("recalculate results");
+  let newCleaner = 93;
+  document.querySelector(".percentage").innerHTML = `${newCleaner}%`;
+  document.querySelector(".previous_score").classList.remove("hidden");
+  document.querySelector(".previous_score span").innerHTML = ` ${cleanerThan}%`;
 }
 
 // -----------------Animation ------------------------
