@@ -8,6 +8,9 @@ let energy;
 let co2Grams;
 let kB;
 let cleanerThan;
+let sharableURL = "https://yoursharableURL.com/id";
+
+new ClipboardJS("#share button");
 
 async function getPageSpeedData() {
   const result = await fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}&key=${key}`);
@@ -62,6 +65,8 @@ function changeData() {
   } else {
     document.querySelector("#host h2").innerHTML = `🤷`;
   }
+  document.querySelector("#share button").setAttribute("data-clipboard-text", sharableURL);
+  console.log(sharableURL);
 }
 
 // ----------------- Pie charts ---------------------------

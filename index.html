@@ -229,7 +229,7 @@
       <div id="share">
         <label for="share_url">Share your results</label>
         <input name="share_url" id="share_url" type="share_url" placeholder="unique-url.com/thisresult" required />
-        <button>Copy link</button>
+        <button data-clipboard-text="">Copy link</button>
       </div>
       <div id="testnew">
         <label for="test_other">Test another site</label>
@@ -246,6 +246,7 @@
       </a>
     </figure>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
   <script type="module" src="/main.js"></script>
 </body>
 

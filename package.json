@@ -11,5 +11,8 @@
     "isitfriday": "^1.0.3",
     "sass": "^1.49.9",
     "vite": "^2.8.0"
+  },
+  "dependencies": {
+    "clipboard": "^2.0.10"
   }
 }
