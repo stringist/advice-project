@@ -85,6 +85,12 @@ input {
     color: a.$light;
 }
 
+input[type="checkbox"],
+input[type="range"] {
+    background: none;
+    border-bottom: none;
+}
+
 #introduction_content {
     grid-row: 1;
     grid-column: 1/-1;
