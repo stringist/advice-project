@@ -54,8 +54,16 @@ function start() {
 // ----------------- Change Data ---------------------------
 
 function changeData() {
-  // discuss new design accordingly
-  document.querySelector(".percentage").innerHTML = `${cleanerThan}%`;
+  let count = 0;
+  updateDisplay();
+  function updateDisplay() {
+    if (count < cleanerThan) {
+      count++;
+      setTimeout(updateDisplay, 15);
+    }
+    document.querySelector(".percentage").innerHTML = `${count}%`;
+  }
+
   document.querySelector("#co2 h2").innerHTML = `${co2Grams.toFixed(2)}`;
   document.querySelector("#bytes h2").innerHTML = `${kB.toFixed(0)}`;
 
@@ -91,10 +99,34 @@ function pieChartPercentage(number) {
 // ----------------- Recalculate Results ---------------------------
 function recalculateResults() {
   console.log("recalculate results");
-  let newCleaner = 93;
-  document.querySelector(".percentage").innerHTML = `${newCleaner}%`;
+
+  newResults.newCleaner = 93;
+  let count = cleanerThan;
+  setTimeout(updateDisplay, 800);
+  function updateDisplay() {
+    if (count < newResults.newCleaner) {
+      count++;
+      setTimeout(updateDisplay, 15);
+    }
+    document.querySelector(".percentage").innerHTML = `${count}%`;
+  }
+
   document.querySelector(".previous_score").classList.remove("hidden");
   document.querySelector(".previous_score span").innerHTML = ` ${cleanerThan}%`;
+
+  let newPerformance = performance;
+
+  if (document.querySelector("#caching").checked) {
+    console.log("caching checked");
+    newPerformance = newPerformance + 3;
+  }
+
+  if (document.querySelector("#fewer_fonts").checked) {
+    console.log("fonts checked");
+    newPerformance = newPerformance + 1;
+  }
+
+  perfomancePerc(newPerformance);
 }
 
 // -----------------Animation ------------------------

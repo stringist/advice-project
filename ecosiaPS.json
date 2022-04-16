@@ -9693,7 +9693,7 @@
       "performance": {
         "id": "performance",
         "title": "Performance",
-        "score": 0.99,
+        "score": 0.79,
         "auditRefs": [
           {
             "id": "first-contentful-paint",
