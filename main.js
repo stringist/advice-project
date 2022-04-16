@@ -34,7 +34,7 @@ async function getCarbonData() {
   kB = data2.bytes * 0.00097656;
   co2Grams = data2.statistics.co2.grid.grams;
   cleanerThan = data2.cleanerThan * 100;
-  energy = data2.statistics.energy;
+  energy = data2.statistics.energy * 1000;
   greenHost = data2.green;
 
   changeData();
@@ -66,6 +66,7 @@ function changeData() {
 
   document.querySelector("#co2 h2").innerHTML = `${co2Grams.toFixed(2)}`;
   document.querySelector("#bytes h2").innerHTML = `${kB.toFixed(0)}`;
+  document.querySelector("#energy h2").innerHTML = `${energy.toFixed(2)}`;
 
   if (greenHost === true) {
     document.querySelector("#host h2").innerHTML = `👍`;
@@ -100,11 +101,17 @@ function pieChartPercentage(number) {
 function recalculateResults() {
   console.log("recalculate results");
 
-  newResults.newCleaner = 93;
+  let newCleaner = 93;
   let count = cleanerThan;
+  let newPerformance = performance;
+  let newGreenHost;
+  let newEnergy = energy;
+  let newCO2 = co2Grams;
+  let newKB = kB;
+
   setTimeout(updateDisplay, 800);
   function updateDisplay() {
-    if (count < newResults.newCleaner) {
+    if (count < newCleaner) {
       count++;
       setTimeout(updateDisplay, 15);
     }
@@ -114,11 +121,9 @@ function recalculateResults() {
   document.querySelector(".previous_score").classList.remove("hidden");
   document.querySelector(".previous_score span").innerHTML = ` ${cleanerThan}%`;
 
-  let newPerformance = performance;
-
   if (document.querySelector("#caching").checked) {
     console.log("caching checked");
-    newPerformance = newPerformance + 3;
+    newPerformance = newPerformance + 2;
   }
 
   if (document.querySelector("#fewer_fonts").checked) {
@@ -126,7 +131,48 @@ function recalculateResults() {
     newPerformance = newPerformance + 1;
   }
 
+  if (document.querySelector("#minify").checked) {
+    console.log("minify checked");
+    newPerformance = newPerformance + 2;
+  }
+
+  if (document.querySelector("#reduce_img").checked) {
+    if (document.querySelector("#reduce_range").value == 25) {
+      console.log("images reduces by 25%");
+      newPerformance = newPerformance + 1;
+      newKB = newKB - 45;
+      newEnergy = newEnergy - 0.05;
+    }
+    if (document.querySelector("#reduce_range").value == 50) {
+      console.log("images reduces by 50%");
+      newPerformance = newPerformance + 2;
+      newKB = newKB - 45;
+      newEnergy = newEnergy - 0.09;
+    }
+    if (document.querySelector("#reduce_range").value == 75) {
+      console.log("images reduces by 75%");
+      newPerformance = newPerformance + 3;
+      newKB = newKB - 60;
+      newEnergy = newEnergy - 0.1;
+    }
+    if (document.querySelector("#reduce_range").value == 100) {
+      console.log("images reduces by 100%");
+      newPerformance = newPerformance + 4;
+      newKB = newKB - 65;
+      newEnergy = newEnergy - 0.12;
+    }
+  }
+
+  if (document.querySelector("#green_host").checked) {
+    console.log("switch host checked");
+    newCO2 = newCO2 - 0.1;
+    document.querySelector("#host h2").innerHTML = `👍`;
+  }
+
   perfomancePerc(newPerformance);
+  document.querySelector("#co2 h2").innerHTML = `${newCO2.toFixed(2)}`;
+  document.querySelector("#bytes h2").innerHTML = `${newKB.toFixed(0)}`;
+  document.querySelector("#energy h2").innerHTML = `${newEnergy.toFixed(2)}`;
 }
 
 // -----------------Animation ------------------------
