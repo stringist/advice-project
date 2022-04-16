@@ -1,0 +1,20 @@
+TO DO:
+
+Kalle: 
+
+    finish styling opportunties section
+    --custom checkboxes DONE
+    --responsive SEMI
+    --secondary button mixin DONE
+    --slider
+
+    set global font size etc.
+
+    change share url input to copy paste thing
+
+
+Lasse:
+
+-- Makes sections responsive
+
+
