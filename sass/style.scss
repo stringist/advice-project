@@ -586,3 +586,32 @@ input[type="range"] {
         opacity: 0.2;
     }
 }
+
+// ----------------- windmill styling ------------------ //
+.windmills_container {
+    overflow: visible;
+    display: inline;
+    height: auto;
+    width: 55vw;
+    // display: none;
+    position: absolute;
+    bottom: 0vh;
+    right: 5vw;
+}
+
+svg {
+    overflow: visible;
+}
+
+.rotate {
+    overflow: visible;
+    border: solid 1px white;
+    // animation: slowRoll 8s linear infinite;
+}
+
+@keyframes slowRoll {
+    to {
+        transform-origin: center 0%;
+        transform: rotate(-360deg);
+    }
+}
