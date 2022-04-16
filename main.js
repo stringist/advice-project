@@ -2,11 +2,15 @@ import "./sass/style.scss";
 
 const key = "AIzaSyAenWpaU3tqIjJc1d2HtM0juCYilYx1gPs";
 const url = encodeURIComponent("https://kea.dk");
+
 async function getPageSpeedData() {
   const result = await fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}&key=${key}`);
   const data = await result.json();
+  let performance = data.lighthouseResult.categories.performance.score;
   console.log(data.lighthouseResult.categories.performance.score);
+  return performance;
 }
+
 async function getCarbonData() {
   const result = await fetch(`https://api.websitecarbon.com/site?url=${url}`);
   const data = await result.json();
@@ -25,7 +29,7 @@ function start() {
 
 // ----------------- Pie charts ---------------------------
 
-perfomancePerc(64);
+perfomancePerc(99);
 
 function perfomancePerc(value) {
   const perfomanceChart = (document.querySelector(".percent svg circle:nth-child(2)").style.strokeDashoffset = pieChartPercentage(value));
