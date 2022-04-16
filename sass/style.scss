@@ -6,6 +6,18 @@
     color: a.$accent;
     border-radius: 3px;
     padding: 1.2rem;
+    &:hover {
+        // background-color: a.$accent;
+        // color: a.$darkest;
+        // transform: scale(1.01);
+        transition: all .3s;
+        transform: translate(-3px, -3px);
+        background: #61caff1e;
+        // font-size: 1.05rem;
+        border: 1px solid a.$accent;
+        box-sizing: border-box;
+        box-shadow: 2px 2px 0px #98ECFF;
+    }
 }
 
 $radius: 3px;
@@ -62,6 +74,7 @@ header {
 h2 {
     margin-top: 2rem;
     margin-bottom: 1rem;
+    font-size: 2rem;
 }
 
 h3 {
@@ -157,15 +170,15 @@ form>button {
     border: none;
     border-radius: 3px;
     color: a.$darkest;
-    font-weight: 600;
-    font-size: 0.9rem;
+    font-weight: 400;
+    font-size: 1rem;
     cursor: pointer;
 }
 
 #insights {
     h2 {
         padding: 1rem 0;
-        font-size: 2rem;
+        // font-size: 2rem;
     }
 }
 
@@ -200,7 +213,7 @@ form>button {
 #your_results {
     text-align: center;
     h2 {
-        font-size: 48px;
+        font-size: 3rem;
     }
     #comparison_container {
         display: flex;
@@ -303,10 +316,6 @@ figure {
     display: grid;
     width: 100%;
     grid-template-columns: 2fr 3fr 1fr;
-}
-
-#test_other {
-    // border: none;
 }
 
 figure:last-of-type {
@@ -465,7 +474,7 @@ figure:last-of-type {
     form {
         display: flex;
         gap: 8vw;
-        padding: 6rem 0rem;
+        padding: 4rem 0rem;
         background: linear-gradient(180deg, #0a1724 0%, rgba(10, 23, 36, 0) 100%);
         .checklists_container {
             display: flex;
