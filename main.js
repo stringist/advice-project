@@ -6,7 +6,7 @@ let performance;
 let greenHost;
 let energy;
 let co2Grams;
-let bytes;
+let kB;
 let cleanerThan;
 
 async function getPageSpeedData() {
@@ -17,15 +17,22 @@ async function getPageSpeedData() {
 
   performance = data.lighthouseResult.categories.performance.score * 100;
   perfomancePerc(performance);
+
+  // this function needs more time to run, therefore changeData is called here for now. Make it be called after both are run?
+  changeData();
 }
 
 async function getCarbonData() {
   // const result = await fetch(`https://api.websitecarbon.com/site?url=${url}`);
   const result = await fetch(`ecosia.json`);
 
-  const carbonData = await result.json();
-  console.log(carbonData);
-  console.log(carbonData.statistics.co2.grid.grams);
+  const data2 = await result.json();
+  console.log(data2);
+  kB = data2.bytes * 0.00097656;
+  co2Grams = data2.statistics.co2.grid.grams;
+  cleanerThan = data2.cleanerThan * 100;
+  energy = data2.statistics.energy;
+  greenHost = data2.green;
 }
 getPageSpeedData();
 getCarbonData();
@@ -36,6 +43,25 @@ function start() {
   // addEventListeners();
   rangeSlider();
   windmills();
+
+  console.log("start");
+}
+
+// ----------------- Change Data ---------------------------
+
+function changeData() {
+  // discuss new design accordingly
+  document.querySelector(".percentage").innerHTML = `${cleanerThan}%`;
+  document.querySelector("#co2 h2").innerHTML = `${co2Grams.toFixed(2)}`;
+  document.querySelector("#bytes h2").innerHTML = `${kB.toFixed(0)}`;
+  document.querySelector("#bytes h2").innerHTML = `${kB.toFixed(0)}`;
+  if (greenHost === true) {
+    document.querySelector("#host h2").innerHTML = `👍`;
+  } else if (greenHost === false) {
+    document.querySelector("#host h2").innerHTML = `👎`;
+  } else {
+    document.querySelector("#host h2").innerHTML = `🤷`;
+  }
 }
 
 // ----------------- Pie charts ---------------------------
