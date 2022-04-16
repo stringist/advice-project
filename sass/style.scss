@@ -12,11 +12,19 @@
         // transform: scale(1.01);
         transition: all .3s;
         transform: translate(-3px, -3px);
-        background: #61caff1e;
+        background: #61caff2d;
         // font-size: 1.05rem;
         border: 1px solid a.$accent;
-        box-sizing: border-box;
         box-shadow: 2px 2px 0px #98ECFF;
+    }
+}
+
+@mixin primary_hover {
+    &:hover {
+        background: #98ECFF;
+        box-shadow: 2px 2px 0px #00758F;
+        transition: all .3s;
+        transform: translate(-2px, -2px);
     }
 }
 
@@ -173,6 +181,7 @@ form>button {
     font-weight: 400;
     font-size: 1rem;
     cursor: pointer;
+    @include primary_hover;
 }
 
 #insights {
@@ -284,6 +293,7 @@ figure {
     button {
         padding: 0.8rem 2rem;
         max-height: 3.5rem;
+        @include primary_hover;
     }
 }
 
@@ -293,6 +303,7 @@ figure {
         background-color: a.$accent;
         border: 1px solid a.$accent;
         border-radius: 2px;
+        @include primary_hover;
     }
 }
 
