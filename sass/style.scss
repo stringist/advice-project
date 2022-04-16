@@ -15,16 +15,16 @@
         background: #61caff2d;
         // font-size: 1.05rem;
         border: 1px solid a.$accent;
-        box-shadow: 2px 2px 0px #98ECFF;
+        box-shadow: 2.5px 2.5px 0px #98ECFF;
     }
 }
 
 @mixin primary_hover {
     &:hover {
         background: #98ECFF;
-        box-shadow: 2px 2px 0px #00758F;
+        box-shadow: 2.5px 2.5px 0px #00758F;
         transition: all .3s;
-        transform: translate(-2px, -2px);
+        transform: translate(-2.5px, -2.5px);
     }
 }
 
