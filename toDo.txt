@@ -19,9 +19,9 @@ Lasse:
 
 
 Paula:
--- Prepare data to show
--- Create recalculated result, add a new line with old results to compare
--- npm clipboard
+ DONE -- Prepare data to show
+ DONE -- Create recalculated result, add a new line with old results to compare
+ DONE -- npm clipboard
 -- animate circles
 -- loading animation (?)
 
