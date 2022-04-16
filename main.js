@@ -123,7 +123,7 @@ function recalculateResults() {
 
   if (document.querySelector("#caching").checked) {
     console.log("caching checked");
-    newPerformance = newPerformance + 2;
+    newPerformance = newPerformance + 0.5;
   }
 
   if (document.querySelector("#fewer_fonts").checked) {
@@ -141,25 +141,25 @@ function recalculateResults() {
       console.log("images reduces by 25%");
       newPerformance = newPerformance + 1;
       newKB = newKB - 45;
-      newEnergy = newEnergy - 0.05;
+      newEnergy = newEnergy - 0.03;
     }
     if (document.querySelector("#reduce_range").value == 50) {
       console.log("images reduces by 50%");
-      newPerformance = newPerformance + 2;
+      newPerformance = newPerformance + 1.8;
       newKB = newKB - 45;
-      newEnergy = newEnergy - 0.09;
+      newEnergy = newEnergy - 0.05;
     }
     if (document.querySelector("#reduce_range").value == 75) {
       console.log("images reduces by 75%");
-      newPerformance = newPerformance + 3;
+      newPerformance = newPerformance + 2.4;
       newKB = newKB - 60;
-      newEnergy = newEnergy - 0.1;
+      newEnergy = newEnergy - 0.06;
     }
     if (document.querySelector("#reduce_range").value == 100) {
       console.log("images reduces by 100%");
-      newPerformance = newPerformance + 4;
+      newPerformance = newPerformance + 3;
       newKB = newKB - 65;
-      newEnergy = newEnergy - 0.12;
+      newEnergy = newEnergy - 0.08;
     }
   }
 
@@ -167,6 +167,13 @@ function recalculateResults() {
     console.log("switch host checked");
     newCO2 = newCO2 - 0.1;
     document.querySelector("#host h2").innerHTML = `👍`;
+  }
+
+  if (document.querySelector("#remove_vid_img").checked) {
+    console.log("remove vid/img checked");
+    newCO2 = newCO2 - 0.07;
+    newKB = newKB - 205;
+    newEnergy = newEnergy - 0.11;
   }
 
   perfomancePerc(newPerformance);
