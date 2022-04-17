@@ -1,5 +1,6 @@
 @use "./abstracts" as a;
 @use "./components" as c;
+@use "./abstracts/loader";
 @mixin secondary {
   background-color: unset;
   border: solid 0.5px a.$accent;
