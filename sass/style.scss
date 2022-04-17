@@ -233,8 +233,8 @@ form>button {
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        padding: 3rem 0rem 5rem 0rem;
-        margin: 4rem 8rem 0 8rem;
+        padding: 2rem 0rem 2rem 0rem;
+        margin: 4rem 12rem 0 12rem;
         background: linear-gradient(180deg, #10293f 0%, rgba(19, 24, 29, 0) 100%);
         border: 0.5px solid $transborder;
         border-radius: $radius;
@@ -348,9 +348,18 @@ figure:last-of-type {
     }
 }
 
-#backtothetop {
-    position: absolute;
-    top: 0;
+// #backtothetop {
+//     position: absolute;
+//     top: 0;
+// }
+#arrow {
+    margin-top: -10vw;
+}
+
+#back_to_top_button>*:hover {
+    @include secondary;
+    padding: 0;
+    // background-color: #61caff2d;
 }
 
 
@@ -644,6 +653,6 @@ svg {
 @keyframes slowRoll {
     to {
         transform-origin: center 0%;
-        transform: rotate(-360deg);
+        transform: rotate(360deg);
     }
 }
