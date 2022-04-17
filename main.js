@@ -46,7 +46,7 @@ function start() {
   // addEventListeners();
   rangeSlider();
   windmills();
-  getPageSpeedData();
+  document.querySelector("#create_report").addEventListener("click", getPageSpeedData);
 
   console.log("start");
 }
@@ -69,14 +69,17 @@ function changeData() {
   document.querySelector("#energy h2").innerHTML = `${energy.toFixed(2)}`;
 
   if (greenHost === true) {
-    document.querySelector("#host h2").innerHTML = `👍`;
+    document.querySelector("#host h2").innerHTML = `♻️`;
     document.querySelector(".further").firstElementChild.classList.add("hidden");
+    document.querySelector("#host svg circle:nth-child(2)").style.strokeDashoffset = 0;
   } else if (greenHost === false) {
-    document.querySelector("#host h2").innerHTML = `👎`;
+    document.querySelector("#host h2").innerHTML = `💨`;
     document.querySelector(".further").firstElementChild.classList.remove("hidden");
+    document.querySelector("#host svg circle:nth-child(2)").style.strokeDashoffset = 440;
   } else {
     document.querySelector("#host h2").innerHTML = `🤷`;
     document.querySelector(".further").firstElementChild.classList.remove("hidden");
+    document.querySelector("#host svg circle:nth-child(2)").style.strokeDashoffset = 220;
   }
   document.querySelector("#share output").innerHTML = sharableURL;
   document.querySelector("#share button").setAttribute("data-clipboard-text", sharableURL);
