@@ -2,6 +2,8 @@ import "./sass/style.scss";
 
 const key = "AIzaSyAenWpaU3tqIjJc1d2HtM0juCYilYx1gPs";
 const url = encodeURIComponent("https://kea.dk");
+const loader = document.querySelector(".loader");
+
 let performance;
 let greenHost;
 let energy;
@@ -13,8 +15,10 @@ let sharableURL = "https://yoursharableURL.com/id";
 new ClipboardJS("#share button");
 
 async function getPageSpeedData() {
-  // const result = await fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}&key=${key}`);
-  const result = await fetch(`ecosiaPS.json`);
+  loader.classList.remove("hidden");
+  console.log("loader showed");
+  const result = await fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}&key=${key}`);
+  // const result = await fetch(`ecosiaPS.json`);
 
   const data = await result.json();
 
@@ -36,6 +40,9 @@ async function getCarbonData() {
   cleanerThan = data2.cleanerThan * 100;
   energy = data2.statistics.energy * 1000;
   greenHost = data2.green;
+  loader.classList.add("hidden");
+  document.querySelector("#your_results").scrollIntoView();
+  console.log("loader hidden");
 
   changeData();
 }
@@ -46,7 +53,8 @@ function start() {
   // addEventListeners();
   rangeSlider();
   windmills();
-  document.querySelector("#create_report").addEventListener("click", getPageSpeedData);
+  getPageSpeedData();
+  // document.querySelector("#create_report").addEventListener("click", getPageSpeedData);
 
   console.log("start");
 }
