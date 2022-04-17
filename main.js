@@ -131,7 +131,6 @@ function windmills() {
         const blades3 = document.querySelector("#right_blades");
         const allBlades = [blades1, blades2, blades3];
 
-        blades1.style = "border: solid 1px white";
         // allBlades.map(item => item.classList.add("rotate"));
         blades1.classList.add("rotate");
     }
