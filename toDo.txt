@@ -24,4 +24,5 @@ Paula:
  DONE -- npm clipboard
 -- animate circles
 -- loading animation (?)
+-- 
 
