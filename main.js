@@ -3,6 +3,7 @@ import "./sass/style.scss";
 const key = "AIzaSyAenWpaU3tqIjJc1d2HtM0juCYilYx1gPs";
 const url = encodeURIComponent("https://kea.dk");
 const loader = document.querySelector(".loader");
+const checkboxes = document.querySelectorAll("input[type='checkbox']");
 
 let performance;
 let greenHost;
@@ -10,7 +11,6 @@ let energy;
 let co2Grams;
 let kB;
 let cleanerThan;
-let sharableURL = "https://yoursharableURL.com/id";
 
 new ClipboardJS("#share button");
 
@@ -51,6 +51,9 @@ window.addEventListener("load", start);
 
 function start() {
   // addEventListeners();
+  for (let i = 0; i < checkboxes.length; i++) {
+    checkboxes[i].checked = false;
+  }
   rangeSlider();
   windmills();
   getPageSpeedData();
@@ -89,9 +92,15 @@ function changeData() {
     document.querySelector(".further").firstElementChild.classList.remove("hidden");
     document.querySelector("#host svg circle:nth-child(2)").style.strokeDashoffset = 220;
   }
+  let sharableURL = "https://yoursharableURL.com/id";
   document.querySelector("#share output").innerHTML = sharableURL;
   document.querySelector("#share button").setAttribute("data-clipboard-text", sharableURL);
-
+  document.querySelector("#share button").addEventListener("click", function () {
+    document.querySelector("#share button").innerHTML = "Copied &#10003;";
+    setTimeout(() => {
+      document.querySelector("#share button").innerHTML = " Copy link";
+    }, 1000);
+  });
   document.querySelector("#recalculate").addEventListener("click", recalculateResults);
 }
 
@@ -112,7 +121,7 @@ function pieChartPercentage(number) {
 function recalculateResults() {
   console.log("recalculate results");
 
-  let newCleaner = 93;
+  let newCleaner = cleanerThan;
   let count = cleanerThan;
   let newPerformance = performance;
   let newGreenHost;
@@ -135,16 +144,19 @@ function recalculateResults() {
   if (document.querySelector("#caching").checked) {
     console.log("caching checked");
     newPerformance = newPerformance + 0.5;
+    newCleaner = newCleaner + 2;
   }
 
   if (document.querySelector("#fewer_fonts").checked) {
     console.log("fonts checked");
     newPerformance = newPerformance + 1;
+    newCleaner = newCleaner + 3.5;
   }
 
   if (document.querySelector("#minify").checked) {
     console.log("minify checked");
     newPerformance = newPerformance + 2;
+    newCleaner = newCleaner + 4.5;
   }
 
   if (document.querySelector("#reduce_img").checked) {
@@ -153,24 +165,28 @@ function recalculateResults() {
       newPerformance = newPerformance + 1;
       newKB = newKB - 45;
       newEnergy = newEnergy - 0.03;
+      newCleaner = newCleaner + 2;
     }
     if (document.querySelector("#reduce_range").value == 50) {
       console.log("images reduces by 50%");
       newPerformance = newPerformance + 1.8;
       newKB = newKB - 45;
       newEnergy = newEnergy - 0.05;
+      newCleaner = newCleaner + 3;
     }
     if (document.querySelector("#reduce_range").value == 75) {
       console.log("images reduces by 75%");
       newPerformance = newPerformance + 2.4;
       newKB = newKB - 60;
       newEnergy = newEnergy - 0.06;
+      newCleaner = newCleaner + 4;
     }
     if (document.querySelector("#reduce_range").value == 100) {
       console.log("images reduces by 100%");
       newPerformance = newPerformance + 3;
       newKB = newKB - 65;
       newEnergy = newEnergy - 0.08;
+      newCleaner = newCleaner + 6;
     }
   }
 
@@ -178,6 +194,7 @@ function recalculateResults() {
     console.log("switch host checked");
     newCO2 = newCO2 - 0.1;
     document.querySelector("#host h2").innerHTML = `👍`;
+    newCleaner = newCleaner + 10;
   }
 
   if (document.querySelector("#remove_vid_img").checked) {
@@ -185,6 +202,7 @@ function recalculateResults() {
     newCO2 = newCO2 - 0.07;
     newKB = newKB - 205;
     newEnergy = newEnergy - 0.11;
+    newCleaner = newCleaner + 10;
   }
 
   perfomancePerc(newPerformance);
