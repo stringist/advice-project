@@ -644,9 +644,9 @@ input[type="range"] {
 //     overflow: visible;
 // }
 .absolute_container {
-    border: solid 1px orange;
+    // border: solid 1px orange;
     height: 100vh;
-    width: 100vw;
+    width: 99vw;
     position: absolute;
     top: 0;
     left: 0;
@@ -654,26 +654,26 @@ input[type="range"] {
 
 .windmills_container {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     position: relative;
     height: 100vh;
-    width: 60vw;
-    bottom: 61vw;
-    right: -35vw;
-    border: $test;
+    width: 50vw;
+    bottom: 0vw;
+    right: -32vw;
+    // border: $test;
     align-items: flex-end;
 }
 
 .blades_and_post {
-    border: $test;
+    // border: $test;
     // height: 100%;
-    border: solid 1px aqua;
+    // border: solid 1px aqua;
     // margin-top: auto;
 }
 
 .blades,
 .post {
-    border: $test;
+    // border: $test;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -682,6 +682,7 @@ input[type="range"] {
 
 .blades {
     background-image: url("../assets/SVG/blades_1_2.svg");
+    position: relative;
 }
 
 // .mill_left {}
@@ -690,16 +691,24 @@ input[type="range"] {
 .mill_left :first-child {
     width: 25vw;
     height: 25vw;
+    top: 14vw;
+    right: 0.48vw;
 }
 
 .mill_middle :first-child {
     width: 20vw;
     height: 20vw;
+    top: 11.1vw;
+    right: 0.3vw;
+    transform: rotate(66);
 }
 
 .mill_right :first-child {
     width: 18vw;
     height: 18vw;
+    top: 9.8vw;
+    right: 0.2vw;
+    transform: rotate(120);
 }
 
 .mill_left :last-child {
@@ -723,8 +732,8 @@ input[type="range"] {
 
 .rotate {
     overflow: visible;
-    border: solid 1px white;
-    animation: slowRoll 8s linear infinite;
+    // border: solid 1px white;
+    animation: slowRoll 40s linear infinite;
 }
 
 @keyframes slowRoll {
