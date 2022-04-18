@@ -193,7 +193,7 @@ function recalculateResults() {
   if (document.querySelector("#green_host").checked) {
     console.log("switch host checked");
     newCO2 = newCO2 - 0.1;
-    document.querySelector("#host h2").innerHTML = `👍`;
+    document.querySelector("#host h2").innerHTML = `♻️`;
     newCleaner = newCleaner + 10;
   }
 
@@ -220,7 +220,7 @@ const properties = {
 };
 const keyframes = [
   {
-    transform: "translate(0,3vw)",
+    transform: "translate(0,.5vw)",
   },
   {
     transform: "translate(0,0)",
@@ -231,17 +231,17 @@ const arrow = document.querySelector("#arrow");
 const animation = arrow.animate(keyframes, properties);
 
 const properties2 = {
-  duration: 750,
+  duration: 1000,
   iterations: Infinity,
   direction: "alternate",
   easing: "ease-in-out",
 };
 const keyframes2 = [
   {
-    transform: "translate(0,0.5vw)",
+    transform: "translate(0, .2vw)",
   },
   {
-    transform: "translate(0,-0.5vw)",
+    transform: "translate(0, -.2vw)",
   },
 ];
 
@@ -301,7 +301,6 @@ function windmills() {
     const blades3 = document.querySelector("#right_blades");
     const allBlades = [blades1, blades2, blades3];
 
-    blades1.style = "border: solid 1px white";
     // allBlades.map(item => item.classList.add("rotate"));
     blades1.classList.add("rotate");
   }
