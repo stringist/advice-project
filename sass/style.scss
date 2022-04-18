@@ -655,15 +655,65 @@ svg {
     overflow: visible;
 }
 
+.windmills_container {
+    display: flex;
+    border: $test;
+}
+
+.blades,
+.post {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.blades {
+    background-image: url("../assets/SVG/blades_1_2.svg");
+}
+
+.mill_left :first-child {
+    width: 20vw;
+    height: 20vw;
+}
+
+.mill_middle :first-child {
+    width: 20vw;
+    height: 20vw;
+}
+
+.mill_right :first-child {
+    width: 20vw;
+    height: 20vw;
+}
+
+.mill_left :last-child {
+    width: 20vw;
+    height: 20vw;
+}
+
+.mill_middle :last-child {
+    width: 20vw;
+    height: 20vw;
+}
+
+.mill_right :last-child {
+    width: 20vw;
+    height: 20vw;
+}
+
+.post {
+    background-image: url("../assets/SVG/post_1.svg");
+}
+
 .rotate {
     overflow: visible;
     border: solid 1px white;
-    // animation: slowRoll 8s linear infinite;
+    animation: slowRoll 8s linear infinite;
 }
 
 @keyframes slowRoll {
     to {
-        transform-origin: center 0%;
+        transform-origin: center center;
         transform: rotate(-360deg);
     }
 }
