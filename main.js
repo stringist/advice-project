@@ -248,10 +248,6 @@ const keyframes2 = [{
 const backToTheTop = document.querySelector("#backArrow");
 const animation2 = backToTheTop.animate(keyframes2, properties2);
 
-// function addEventListeners() {
-
-// }
-
 function rangeSlider() {
     const checkContainer = document.querySelector(".reduce_box");
     const checkbox = document.querySelector("#reduce_img");
@@ -285,23 +281,3 @@ function rangeSlider() {
         }
     }
 }
-
-// windmill animation
-// function windmills() {
-//   fetch("./assets/windmills_layers.svg")
-//     .then((e) => e.text())
-//     .then((d) => {
-//       document.querySelector(".windmills_container").insertAdjacentHTML("afterbegin", d);
-//       spinBlades();
-//     });
-
-//   function spinBlades() {
-//     const blades1 = document.querySelector("#left_blades");
-//     const blades2 = document.querySelector("#middle_blades");
-//     const blades3 = document.querySelector("#right_blades");
-//     const allBlades = [blades1, blades2, blades3];
-
-//     // allBlades.map(item => item.classList.add("rotate"));
-//     blades1.classList.add("rotate");
-//   }
-// }
