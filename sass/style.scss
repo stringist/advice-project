@@ -50,6 +50,10 @@ body {
     grid-template-columns: 1fr;
 }
 
+button {
+    font-size: 1rem;
+}
+
 // main {
 // padding: 50px 170px;
 // display: grid;
@@ -115,6 +119,15 @@ output {
     color: a.$light;
 }
 
+a {
+    text-decoration: none;
+}
+
+#rangevalue {
+    background: none;
+    border: none;
+}
+
 input[type="checkbox"],
 input[type="range"] {
     cursor: pointer;
@@ -130,6 +143,7 @@ input[type="range"] {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    z-index: 1;
 }
 
 #text,
@@ -161,17 +175,18 @@ form {
     border-radius: $radius;
     color: a.$light;
     padding-left: 0.8rem;
-    height: 2.5rem;
-    margin-top: 0.5rem;
+    height: 3.5rem;
+    margin-top: 01rem;
 }
 
 #url {
-    max-width: 21rem;
+    max-width: 22rem;
     margin-bottom: 1.5rem;
 }
 
 #industry {
-    max-width: 15rem;
+    color: a.$light-grey;
+    max-width: 18rem;
     appearance: none;
     background-image: url(../assets/arrow_down.svg);
     background-repeat: no-repeat, repeat;
@@ -231,6 +246,7 @@ form>button {
 
 #your_results {
     text-align: center;
+    margin-bottom: 6vw;
     h2 {
         font-size: 3rem;
     }
@@ -679,10 +695,9 @@ input[type="range"] {
 }
 
 // .mill_left {}
-.mill_middle {
-    margin-left: 1vw;
-}
-
+// .mill_middle {
+//     margin-left: 1vw;
+// }
 .mill_right {
     margin-left: 3vw;
 }
