@@ -640,40 +640,56 @@ input[type="range"] {
 }
 
 // ----------------- windmill styling ------------------ //
-.windmills_container {
-    overflow: visible;
-    display: inline;
-    height: auto;
-    width: 55vw;
-    // display: none;
+// svg {
+//     overflow: visible;
+// }
+.absolute_container {
+    border: solid 1px orange;
+    height: 100vh;
+    width: 100vw;
     position: absolute;
-    bottom: 0vh;
-    right: 5vw;
-}
-
-svg {
-    overflow: visible;
+    top: 0;
+    left: 0;
 }
 
 .windmills_container {
     display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 100vh;
+    width: 60vw;
+    bottom: 61vw;
+    right: -35vw;
     border: $test;
+    align-items: flex-end;
+}
+
+.blades_and_post {
+    border: $test;
+    // height: 100%;
+    border: solid 1px aqua;
+    // margin-top: auto;
 }
 
 .blades,
 .post {
+    border: $test;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    // position: absolute;
 }
 
 .blades {
     background-image: url("../assets/SVG/blades_1_2.svg");
 }
 
+// .mill_left {}
+// .mill_middle {}
+// .mill_right {}
 .mill_left :first-child {
-    width: 20vw;
-    height: 20vw;
+    width: 25vw;
+    height: 25vw;
 }
 
 .mill_middle :first-child {
@@ -682,22 +698,22 @@ svg {
 }
 
 .mill_right :first-child {
-    width: 20vw;
-    height: 20vw;
+    width: 18vw;
+    height: 18vw;
 }
 
 .mill_left :last-child {
-    width: 20vw;
-    height: 20vw;
+    // width: 25vw;
+    height: 30vw;
 }
 
 .mill_middle :last-child {
-    width: 20vw;
-    height: 20vw;
+    // width: 20vw;
+    height: 25vw;
 }
 
 .mill_right :last-child {
-    width: 20vw;
+    // width: 18vw;
     height: 20vw;
 }
 
@@ -714,6 +730,6 @@ svg {
 @keyframes slowRoll {
     to {
         transform-origin: center center;
-        transform: rotate(-360deg);
+        transform: rotate(360deg);
     }
 }
