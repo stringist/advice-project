@@ -56,8 +56,8 @@ function start() {
   }
   rangeSlider();
   windmills();
-  getPageSpeedData();
-  // document.querySelector("#create_report").addEventListener("click", getPageSpeedData);
+  // getPageSpeedData();
+  document.querySelector("#create_report").addEventListener("click", getPageSpeedData);
 
   console.log("start");
 }
