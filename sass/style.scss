@@ -664,13 +664,6 @@ input[type="range"] {
     align-items: flex-end;
 }
 
-.blades_and_post {
-    // border: $test;
-    // height: 100%;
-    // border: solid 1px aqua;
-    // margin-top: auto;
-}
-
 .blades,
 .post {
     // border: $test;
@@ -686,8 +679,14 @@ input[type="range"] {
 }
 
 // .mill_left {}
-// .mill_middle {}
-// .mill_right {}
+.mill_middle {
+    margin-left: 1vw;
+}
+
+.mill_right {
+    margin-left: 3vw;
+}
+
 .mill_left :first-child {
     width: 25vw;
     height: 25vw;
@@ -696,49 +695,76 @@ input[type="range"] {
 }
 
 .mill_middle :first-child {
+    transform: rotate(60deg);
     width: 20vw;
     height: 20vw;
     top: 11.1vw;
     right: 0.3vw;
-    transform: rotate(66);
+    filter: brightness(.9);
 }
 
 .mill_right :first-child {
-    width: 18vw;
-    height: 18vw;
-    top: 9.8vw;
+    transform: rotate(30deg);
+    width: 15vw;
+    height: 15vw;
+    top: 8.4vw;
     right: 0.2vw;
-    transform: rotate(120);
+    filter: brightness(.7);
 }
 
 .mill_left :last-child {
     // width: 25vw;
-    height: 30vw;
+    height: 32vw;
 }
 
 .mill_middle :last-child {
     // width: 20vw;
     height: 25vw;
+    filter: brightness(.9);
 }
 
 .mill_right :last-child {
     // width: 18vw;
-    height: 20vw;
+    height: 19vw;
+    filter: brightness(.7);
 }
 
 .post {
     background-image: url("../assets/SVG/post_1.svg");
 }
 
-.rotate {
+.rotate_1 {
     overflow: visible;
-    // border: solid 1px white;
-    animation: slowRoll 40s linear infinite;
+    animation: slowRoll_1 40s linear infinite;
 }
 
-@keyframes slowRoll {
+@keyframes slowRoll_1 {
     to {
         transform-origin: center center;
         transform: rotate(360deg);
+    }
+}
+
+.rotate_2 {
+    overflow: visible;
+    animation: slowRoll_2 40s linear infinite;
+}
+
+@keyframes slowRoll_2 {
+    to {
+        transform-origin: center center;
+        transform: rotate(420deg);
+    }
+}
+
+.rotate_3 {
+    overflow: visible;
+    animation: slowRoll_3 40s linear infinite;
+}
+
+@keyframes slowRoll_3 {
+    to {
+        transform-origin: center center;
+        transform: rotate(390deg);
     }
 }
