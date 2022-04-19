@@ -1,0 +1,21 @@
+{
+  "url": "https://www.borger.dk/",
+  "green": "unknown",
+  "bytes": 800581,
+  "cleanerThan": 0.7,
+  "statistics": {
+    "adjustedBytes": 604438.655,
+    "energy": 0.0010160838926909492,
+    "co2": {
+      "grid": {
+        "grams": 0.4826398490282009,
+        "litres": 0.26844428402948534
+      },
+      "renewable": {
+        "grams": 0.4374106222093587,
+        "litres": 0.24328778807284535
+      }
+    }
+  },
+  "timestamp": 1649320932
+}

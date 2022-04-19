@@ -1,0 +1,21 @@
+{
+  "url": "https://www.ecosia.org/",
+  "green": false,
+  "bytes": 499761,
+  "cleanerThan": 0.71,
+  "statistics": {
+    "adjustedBytes": 377319.555,
+    "energy": 0.0006342882260447367,
+    "co2": {
+      "grid": {
+        "grams": 0.30128690737124997,
+        "litres": 0.16757577787988925
+      },
+      "renewable": {
+        "grams": 0.2730526579646173,
+        "litres": 0.15187188835992016
+      }
+    }
+  },
+  "timestamp": 1650097041
+}
