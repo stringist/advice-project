@@ -185,7 +185,7 @@ form {
 }
 
 #industry {
-    color: a.$light-grey;
+    // color: a.$light-grey;
     max-width: 18rem;
     appearance: none;
     background-image: url(../assets/arrow_down.svg);
@@ -193,6 +193,10 @@ form {
     background-position: right 0.7em top 50%, 0 0;
     background-size: 1.3em auto, 100%;
     cursor: pointer;
+}
+
+option[value="#"] {
+    display: none;
 }
 
 form>button {
@@ -750,7 +754,7 @@ input[type="range"] {
 
 .rotate_1 {
     overflow: visible;
-    animation: slowRoll_1 40s linear infinite;
+    animation: slowRoll_1 60s linear infinite;
 }
 
 @keyframes slowRoll_1 {
@@ -762,7 +766,7 @@ input[type="range"] {
 
 .rotate_2 {
     overflow: visible;
-    animation: slowRoll_2 40s linear infinite;
+    animation: slowRoll_2 60s linear infinite;
 }
 
 @keyframes slowRoll_2 {
@@ -774,7 +778,7 @@ input[type="range"] {
 
 .rotate_3 {
     overflow: visible;
-    animation: slowRoll_3 40s linear infinite;
+    animation: slowRoll_3 60s linear infinite;
 }
 
 @keyframes slowRoll_3 {
