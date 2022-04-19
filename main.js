@@ -89,10 +89,10 @@ function changeData() {
         // document.querySelector("#host svg circle:nth-child(2)").style.strokeDashoffset = 0;
         document.querySelector(".host_span").innerHTML = `  √`
         document.querySelector("#host span").style.color = "#22C3E8";
-        document.querySelector(".host_container").style.backgroundImage = `url('./assets/SVG/green_leaf.svg')`;
+        document.querySelector(".host_container").style.backgroundImage = `url('../assets/SVG/green_leaf.svg')`;
 
     } else if (greenHost === false) {
-        document.querySelector(".host_container").style.backgroundImage = `url('./assets/SVG/red_leaf.svg')`;
+        document.querySelector(".host_container").style.backgroundImage = `url('../assets/SVG/red_leaf.svg')`;
         document.querySelector(".further").firstElementChild.classList.remove("hidden");
         document.querySelector(".host_span").innerHTML = `  Χ`
         document.querySelector("#host span").style.color = "red";
@@ -209,7 +209,7 @@ function recalculateResults() {
         document.querySelector(".host_span").innerHTML = `  √`
         document.querySelector(".host_span").style.color = `#22C3E8`
         document.querySelector(".host_container").style.backgroundImage = `none`;
-        document.querySelector(".host_container").style.backgroundImage = `url('./assets/SVG/green_leaf.svg')`;
+        document.querySelector(".host_container").style.backgroundImage = `url('../assets/SVG/green_leaf.svg')`;
     }
 
     if (document.querySelector("#remove_vid_img").checked) {
