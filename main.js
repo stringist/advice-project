@@ -40,6 +40,7 @@ async function getCarbonData() {
     cleanerThan = data2.cleanerThan * 100;
     energy = data2.statistics.energy * 1000;
     greenHost = data2.green;
+    document.querySelector("main").classList.remove("hidden");
     loader.classList.add("hidden");
     document.querySelector("#your_results").scrollIntoView();
     console.log("loader hidden");
@@ -50,6 +51,7 @@ async function getCarbonData() {
 window.addEventListener("load", start);
 
 function start() {
+    document.querySelector("main").classList.add("hidden");
     // addEventListeners();
     for (let i = 0; i < checkboxes.length; i++) {
         checkboxes[i].checked = false;
@@ -81,17 +83,24 @@ function changeData() {
     document.querySelector("#energy h2").innerHTML = `${energy.toFixed(2)}`;
 
     if (greenHost === true) {
-        document.querySelector("#host h2").innerHTML = `♻️`;
+        // document.querySelector("#host h2").innerHTML = `♻️`;
+        // document.querySelector("#host h2").innerHTML = ``;
         document.querySelector(".further").firstElementChild.classList.add("hidden");
-        document.querySelector("#host svg circle:nth-child(2)").style.strokeDashoffset = 0;
+        // document.querySelector("#host svg circle:nth-child(2)").style.strokeDashoffset = 0;
+        document.querySelector(".host_span").innerHTML = `  √`
+        document.querySelector("#host span").style.color = "#22C3E8";
+        document.querySelector(".host_container").style.backgroundImage = `url('./assets/SVG/green_leaf.svg')`;
+
     } else if (greenHost === false) {
-        document.querySelector("#host h2").innerHTML = `💨`;
+        document.querySelector(".host_container").style.backgroundImage = `url('./assets/SVG/red_leaf.svg')`;
         document.querySelector(".further").firstElementChild.classList.remove("hidden");
-        document.querySelector("#host svg circle:nth-child(2)").style.strokeDashoffset = 440;
+        document.querySelector(".host_span").innerHTML = `  Χ`
+        document.querySelector("#host span").style.color = "red";
+        // document.querySelector("#host svg circle:nth-child(2)").style.strokeDashoffset = 440;
     } else {
-        document.querySelector("#host h2").innerHTML = `🤷`;
+        // document.querySelector("#host h2").innerHTML = `🤷`;
         document.querySelector(".further").firstElementChild.classList.remove("hidden");
-        document.querySelector("#host svg circle:nth-child(2)").style.strokeDashoffset = 220;
+        // document.querySelector("#host svg circle:nth-child(2)").style.strokeDashoffset = 220;
     }
     let sharableURL = "https://yoursharableURL.com/id";
     document.querySelector("#share output").innerHTML = sharableURL;
@@ -195,8 +204,12 @@ function recalculateResults() {
     if (document.querySelector("#green_host").checked) {
         console.log("switch host checked");
         newCO2 = newCO2 - 0.1;
-        document.querySelector("#host h2").innerHTML = `♻️`;
+
         newCleaner = newCleaner + 10;
+        document.querySelector(".host_span").innerHTML = `  √`
+        document.querySelector(".host_span").style.color = `#22C3E8`
+        document.querySelector(".host_container").style.backgroundImage = `none`;
+        document.querySelector(".host_container").style.backgroundImage = `url('./assets/SVG/green_leaf.svg')`;
     }
 
     if (document.querySelector("#remove_vid_img").checked) {

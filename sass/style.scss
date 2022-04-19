@@ -787,3 +787,14 @@ input[type="range"] {
         transform: rotate(390deg);
     }
 }
+
+// --------green host styling ----------
+.host_container {
+    background-image: url("../assets/SVG/green_leaf.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.host_span {
+    color: a.$accent;
+}
